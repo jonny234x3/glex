@@ -1,13 +1,12 @@
 #include "CubeAsset.h"
 
-CubeAsset::CubeAsset() {
-////
-///model coordinates, origin at centre.
-///
+CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
 
-GLfloat x = 2.0f;
-GLfloat y = 4.0f;
-GLfloat z = 1.0f;
+///
+///Cube Creation
+///models coordinates, origin dependant on xyz variables.
+///creates cube using 12 triangles.
+///
 
   GLfloat vertex_buffer [] {
       -0.5f + x, -0.5f + y, -0.5f + z   //0
