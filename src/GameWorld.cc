@@ -29,6 +29,13 @@ int plane[planeX][planeY] = {
 };
 
 ///
+///Pyramid Spawning
+///using asset_manager to add the instance of a pyramid.
+///
+
+asset_manager->AddAsset(std::make_shared<PyramidAsset>(-3.0f, -2.0f, 1.0f));
+
+///
 ///For loop to read positions in the array.
 ///using asset_manager to add the instance of a cube.
 ///
