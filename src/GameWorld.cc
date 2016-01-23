@@ -34,6 +34,9 @@ int plane[planeX][planeY] = {
 ///
 
 asset_manager->AddAsset(std::make_shared<PyramidAsset>(-3.0f, -2.0f, 1.0f));
+asset_manager->AddAsset(std::make_shared<PyramidAsset>(-3.0f, 2.0f, 1.0f));
+asset_manager->AddAsset(std::make_shared<PyramidAsset>(3.0f, 2.0f, -2.0f));
+asset_manager->AddAsset(std::make_shared<PyramidAsset>(0.0f, 2.0f, -6.0f));
 
 ///
 ///For loop to read positions in the array.

@@ -5,26 +5,25 @@ PyramidAsset::PyramidAsset(GLfloat x, GLfloat y, GLfloat z) {
 ///
 ///Pyramid Creation
 ///models coordinates, origin dependant on xyz variables.
-///creates Pyramid using 12 triangles.
+///creates Pyramid using 6 triangles.
 ///
 
   GLfloat vertex_buffer [] {
-      -0.5f + x, -0.5f + y, 0.0f + z   //0
-    , -0.5f + x,  0.5f + y, 0.0f + z   //1
-    ,  0.5f + x,  0.5f + y, 0.0f + z   //2
-    ,  0.5f + x, -0.5f + y, 0.0f + z   //3
-    , -0.0f + x,  0.0f + y, 2.0f + z   //4
-
+      -0.5f + x,  0.0f + y, -0.5f + z   //0
+    , -0.5f + x,  0.0f + y,  0.5f + z   //1
+    ,  0.5f + x,  0.0f + y, -0.5f + z   //2
+    ,  0.5f + x,  0.0f + y,  0.5f + z   //3
+    ,  0.0f + x,  1.0f + y,  0.0f + z   //4
   };
 
   element_buffer_length = 36;
   GLuint element_buffer []  {
-      0, 4, 3  // front
-    , 1, 2, 4  // back
-    , 0, 1, 4  // left
-    , 2, 3, 4  // right
+      1, 4, 0  // left
+    , 0, 4, 2  // front
+    , 2, 4, 3  // right
+    , 1, 4, 3  // back
     , 0, 1, 2  // bottom
-    , 0, 2, 3     
+    , 1, 3, 2     
   };
 
   // Transfer buffers to the GPU
