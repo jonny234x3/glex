@@ -17,7 +17,7 @@ class PyramidAsset : public GameAsset {
 
  private:
   GLuint element_buffer_length;
-  GLuint vertex_buffer_token, element_buffer_token;
+  GLuint vertex_buffer_token, color_buffer_token, element_buffer_token;
   void checkError(std::string file, int line);
 };
 

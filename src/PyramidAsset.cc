@@ -16,6 +16,14 @@ PyramidAsset::PyramidAsset(GLfloat x, GLfloat y, GLfloat z) {
     ,  0.0f + x,  1.0f + y,  0.0f + z   //4
   };
 
+  GLfloat color_buffer [] {
+      1.0f, 0.0f, 0.0f //0
+    , 1.0f, 0.0f, 0.0f //1
+    , 1.0f, 0.0f, 0.0f //2
+    , 1.0f, 0.0f, 0.0f //3
+    , 1.0f, 0.0f, 0.0f //4
+  };
+
   element_buffer_length = 36;
   GLuint element_buffer []  {
       1, 4, 0  // left
@@ -29,7 +37,7 @@ PyramidAsset::PyramidAsset(GLfloat x, GLfloat y, GLfloat z) {
   // Transfer buffers to the GPU
   //
 
-  // create buffer
+  // create vertex buffer
   glGenBuffers(1, &vertex_buffer_token);
 
   // immediately bind the buffer and transfer the data
@@ -39,6 +47,14 @@ PyramidAsset::PyramidAsset(GLfloat x, GLfloat y, GLfloat z) {
   glGenBuffers(1, &element_buffer_token);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, element_buffer_token);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * element_buffer_length, element_buffer, GL_STATIC_DRAW);
+
+  // create color buffer
+  glGenBuffers(1, &color_buffer_token);
+
+  // immediately bind the buffer and transfer the data
+  glBindBuffer(GL_ARRAY_BUFFER, color_buffer_token);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 36, color_buffer, GL_STATIC_DRAW);
+
 }
 
 PyramidAsset::~PyramidAsset() {
@@ -90,6 +106,7 @@ void PyramidAsset::Draw(GLuint program_token) {
 
   // use the previously transferred buffer as the vertex array.  This way
   // we transfer the buffer once -- at construction -- not on every frame.
+  glEnableVertexAttribArray(0);
   glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_token);
   glVertexAttribPointer(
                         position_attrib,               /* attribute */
@@ -100,6 +117,21 @@ void PyramidAsset::Draw(GLuint program_token) {
                         (void*)0                       /* array buffer offset */
                         );
   glEnableVertexAttribArray(position_attrib);
+
+  checkGLError();
+
+  ///
+  /// repeated buffer array for color buffer
+  ///
+  glBindBuffer(GL_ARRAY_BUFFER, color_buffer_token);
+  glVertexAttribPointer(
+                        1,                             /* attribute */
+                        3,                             /* size */
+                        GL_FLOAT,                      /* type */
+                        GL_FALSE,                      /* normalized? */
+                        0,                             /* stride */
+                        (void*)0                       /* array buffer offset */
+                        );
 
   checkGLError();
 
