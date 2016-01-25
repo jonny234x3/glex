@@ -1,0 +1,123 @@
+\hypertarget{classGameWorld}{}\section{Game\+World Class Reference}
+\label{classGameWorld}\index{Game\+World@{Game\+World}}
+
+
+\hyperlink{classGameWorld}{Game\+World} allows us to separate the management of the game world from the nuts and bolts of game loop initialisation.  
+
+
+
+
+{\ttfamily \#include $<$Game\+World.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameWorld_a17a84e57a80600961088afc753036f89}{Game\+World} (\hyperlink{common_8h_add86e7c88dd109abea3f708b422f31f0}{Application\+Mode})
+\begin{DoxyCompactList}\small\item\em We thread the Application\+Mode through the \hyperlink{classGameWorld}{Game\+World} ss we want to read it in from the user. \end{DoxyCompactList}\item 
+void \hyperlink{classGameWorld_a275418607d8286979b276f165ad5876b}{Draw} ()
+\begin{DoxyCompactList}\small\item\em Calling \hyperlink{classGameWorld_a275418607d8286979b276f165ad5876b}{Draw()} will draw the entire world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classGameAssetManager}{Game\+Asset\+Manager} $>$ \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\+\_\+manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGameWorld}{Game\+World} allows us to separate the management of the game world from the nuts and bolts of game loop initialisation. 
+
+The \hyperlink{classGameWorld}{Game\+World} currently has a very simplified scene graph consisiting of a single \hyperlink{classGameAssetManager}{Game\+Asset\+Manager}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGameWorld_a17a84e57a80600961088afc753036f89}{}\index{Game\+World@{Game\+World}!Game\+World@{Game\+World}}
+\index{Game\+World@{Game\+World}!Game\+World@{Game\+World}}
+\subsubsection[{Game\+World(\+Application\+Mode)}]{\setlength{\rightskip}{0pt plus 5cm}Game\+World\+::\+Game\+World (
+\begin{DoxyParamCaption}
+\item[{{\bf Application\+Mode}}]{mode}
+\end{DoxyParamCaption}
+)}\label{classGameWorld_a17a84e57a80600961088afc753036f89}
+
+
+We thread the Application\+Mode through the \hyperlink{classGameWorld}{Game\+World} ss we want to read it in from the user. 
+
+Threading the state through the various function calls is preferable (in this case) to having some kind of global state. Cube spawning with Array Using a 2\+D array to spawn multiple voxels, to spell a word
+
+Pyramid Spawning using asset\+\_\+manager to add the instance of a pyramid.
+
+For loop to read positions in the array. using asset\+\_\+manager to add the instance of a cube.
+\begin{DoxyCode}
+3                                           : \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager} (make\_shared<GameAssetManager>(mode)
+      )\{
+4 
+9 
+10 \textcolor{keywordtype}{int} X,Y;
+11 \textcolor{keywordtype}{int} Z = -10;
+12 \textcolor{keywordtype}{int} planeX = 12;
+13 \textcolor{keywordtype}{int} planeY = 12;
+14 
+15 \textcolor{keywordtype}{int} plane[planeX][planeY] = \{
+16 
+17 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
+18 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
+19 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
+20 \{1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1\},
+21 \{1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0\},
+22 \{1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1\},
+23 \{1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0\},
+24 \{1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0\},
+25 \{1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1\},
+26 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
+27 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
+28 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\}
+29 \};
+30 
+35 
+36 \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<PyramidAsset>(-3.0f, -2.0f, 1.0f));
+37 \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<PyramidAsset>(-3.0f, 2.0f, 1.0f));
+38 \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<PyramidAsset>(3.0f, 2.0f, -2.0f));
+39 \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<PyramidAsset>(0.0f, 2.0f, -6.0f));
+40 
+45 
+46  \textcolor{keywordflow}{for}( X=0; X<planeX; X++)\{
+47    \textcolor{keywordflow}{for} (Y=0; Y<planeY; Y++)\{
+48     \textcolor{keywordflow}{if}( plane[Y][X] == 1)\{  
+49       \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<CubeAsset>(X, -Y, Z));
+50       \textcolor{comment}{//spawning a cube}
+51     \}    
+52    \}
+53  \}
+54 
+55 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGameWorld_a275418607d8286979b276f165ad5876b}{}\index{Game\+World@{Game\+World}!Draw@{Draw}}
+\index{Draw@{Draw}!Game\+World@{Game\+World}}
+\subsubsection[{Draw()}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGameWorld_a275418607d8286979b276f165ad5876b}
+
+
+Calling \hyperlink{classGameWorld_a275418607d8286979b276f165ad5876b}{Draw()} will draw the entire world. 
+
+
+\begin{DoxyCode}
+57                      \{
+58   \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->Draw();
+59 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{}\index{Game\+World@{Game\+World}!asset\+\_\+manager@{asset\+\_\+manager}}
+\index{asset\+\_\+manager@{asset\+\_\+manager}!Game\+World@{Game\+World}}
+\subsubsection[{asset\+\_\+manager}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf Game\+Asset\+Manager}$>$ Game\+World\+::asset\+\_\+manager\hspace{0.3cm}{\ttfamily [private]}}\label{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{GameWorld_8h}{Game\+World.\+h}\item 
+src/\hyperlink{GameWorld_8cc}{Game\+World.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,330 @@
+\hypertarget{classGameAssetManager}{}\section{Game\+Asset\+Manager Class Reference}
+\label{classGameAssetManager}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+
+
+\hyperlink{classGameAssetManager}{Game\+Asset\+Manager} is a container for Game\+Assets.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Asset\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameAssetManager_aaa0d58e276cc10ad91a7457085598a71}{Game\+Asset\+Manager} (\hyperlink{common_8h_add86e7c88dd109abea3f708b422f31f0}{Application\+Mode})
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{classGameAssetManager}{Game\+Asset\+Manager} to load the correct shaders based on the Application\+Mode. \end{DoxyCompactList}\item 
+virtual \hyperlink{classGameAssetManager_a1270bd61ecbcca563f079803e40c9b77}{$\sim$\+Game\+Asset\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Deletes a \hyperlink{classGameAssetManager}{Game\+Asset\+Manager}, in particular it will clean up any modifications to the Open\+G\+L state. \end{DoxyCompactList}\item 
+\hyperlink{classGameAssetManager_a2c9adcb72faa154c87eadc9bafe5269d}{Game\+Asset\+Manager} (\hyperlink{classGameAssetManager}{Game\+Asset\+Manager} const \&)
+\begin{DoxyCompactList}\small\item\em Unimplemented copy constructor -- this means that the \hyperlink{classGameAssetManager}{Game\+Asset\+Manager} may not work as you\textquotesingle{}d expect when being copied. \end{DoxyCompactList}\item 
+\hyperlink{classGameAssetManager_a44f6e2fd6b8ff1dd64e5697f1be7386d}{Game\+Asset\+Manager} (\hyperlink{classGameAssetManager}{Game\+Asset\+Manager} const \&\&)
+\begin{DoxyCompactList}\small\item\em Unimplemented move constructor -- this unimplemented method violates the C++11 move semantics for \hyperlink{classGameAssetManager}{Game\+Asset\+Manager}. \end{DoxyCompactList}\item 
+void \hyperlink{classGameAssetManager_ac72678a4ad5378c685aa6bae84a4e712}{operator=} (\hyperlink{classGameAssetManager}{Game\+Asset\+Manager} const \&)
+\begin{DoxyCompactList}\small\item\em Unimplemented assisgnment operator -- violates the expected semantics for assignment in C++11. \end{DoxyCompactList}\item 
+void \hyperlink{classGameAssetManager_ad3de8ff00d55ba04728b1de8213b2349}{Add\+Asset} (std\+::shared\+\_\+ptr$<$ \hyperlink{classGameAsset}{Game\+Asset} $>$)
+\begin{DoxyCompactList}\small\item\em Adds a \hyperlink{classGameAsset}{Game\+Asset} to the scene graph. \end{DoxyCompactList}\item 
+void \hyperlink{classGameAssetManager_a32837132bd70a9a9ed537323c2d3d886}{Draw} ()
+\begin{DoxyCompactList}\small\item\em Draws each \hyperlink{classGameAsset}{Game\+Asset} in the scene graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \hyperlink{classGameAssetManager_abec45b44a8b35ad2d7d817ba10e0dd8d}{Create\+G\+L\+Program} (std\+::string \&, std\+::string \&)
+\begin{DoxyCompactList}\small\item\em When given the contents of a vertex shader and fragment shader \hyperlink{classGameAssetManager_abec45b44a8b35ad2d7d817ba10e0dd8d}{Game\+Asset\+Manager\+::\+Create\+G\+L\+Program} will compile and link them. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{classGameAssetManager_a1a1e5c07f941e8d3fda40d9442ac7037}{Create\+G\+L\+E\+S\+Shader} (G\+Lenum, std\+::string \&)
+\begin{DoxyCompactList}\small\item\em When given a type of shader to construct and the contents of a shader, \hyperlink{classGameAssetManager_a1a1e5c07f941e8d3fda40d9442ac7037}{Game\+Asset\+Manager\+::\+Create\+G\+L\+E\+S\+Shader} will create the shader or exit with error -\/1. \end{DoxyCompactList}\item 
+std\+::pair$<$ G\+Lchar $\ast$, G\+Lint $>$ \hyperlink{classGameAssetManager_a23b124a213308a68a882727127601c97}{Read\+Shader} (std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Read\+Shader reads the contents of a file and packs it into a null termintated G\+Lchar $\ast$ which is suitable for sending to Open\+G\+L. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classGameAsset}{Game\+Asset} $>$ $>$ \hyperlink{classGameAssetManager_a671cddd92f1de4186c582fe0c4297b7d}{draw\+\_\+list}
+\item 
+G\+Luint \hyperlink{classGameAssetManager_ad7bab17862e06ca692289f934b40548b}{program\+\_\+token}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGameAssetManager}{Game\+Asset\+Manager} is a container for Game\+Assets. 
+
+It also provides utility functions to to create a simple Open\+G\+L program that can be used to draw a simple \hyperlink{classGameAsset}{Game\+Asset}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGameAssetManager_aaa0d58e276cc10ad91a7457085598a71}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{Game\+Asset\+Manager(\+Application\+Mode)}]{\setlength{\rightskip}{0pt plus 5cm}Game\+Asset\+Manager\+::\+Game\+Asset\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Application\+Mode}}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classGameAssetManager_aaa0d58e276cc10ad91a7457085598a71}
+
+
+Creates a \hyperlink{classGameAssetManager}{Game\+Asset\+Manager} to load the correct shaders based on the Application\+Mode. 
+
+
+\begin{DoxyCode}
+7                                                        \{
+8   std::string vertex\_shader(\textcolor{stringliteral}{"shaders/translate.vs"});
+9   std::string fragment\_shader(\textcolor{stringliteral}{"shaders/fragment.fs"});
+10 
+11   \textcolor{keywordflow}{switch}(mode) \{
+12   \textcolor{keywordflow}{case} \hyperlink{common_8h_add86e7c88dd109abea3f708b422f31f0a3dcfe0046eb5876e287dbf0914819b16}{ROTATE}:
+13     vertex\_shader = \textcolor{stringliteral}{"shaders/rotate.vs"};
+14     \textcolor{keywordflow}{break};
+15   \textcolor{keywordflow}{case} \hyperlink{common_8h_add86e7c88dd109abea3f708b422f31f0a593be05a10070b4e7e0856e20590eaaf}{SCALE}:
+16     vertex\_shader = \textcolor{stringliteral}{"shaders/scale.vs"};
+17     \textcolor{keywordflow}{break};
+18   \textcolor{keywordflow}{case} \hyperlink{common_8h_add86e7c88dd109abea3f708b422f31f0a25f73324dc93d9024c0c75b4e6815335}{TRANSFORM}:
+19   \textcolor{keywordflow}{default}:
+20     \textcolor{keywordflow}{break};
+21   \};
+22 
+23   \hyperlink{classGameAssetManager_ad7bab17862e06ca692289f934b40548b}{program\_token} = \hyperlink{classGameAssetManager_abec45b44a8b35ad2d7d817ba10e0dd8d}{CreateGLProgram}(vertex\_shader, fragment\_shader);
+24 \}
+\end{DoxyCode}
+\hypertarget{classGameAssetManager_a1270bd61ecbcca563f079803e40c9b77}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!````~Game\+Asset\+Manager@{$\sim$\+Game\+Asset\+Manager}}
+\index{````~Game\+Asset\+Manager@{$\sim$\+Game\+Asset\+Manager}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{$\sim$\+Game\+Asset\+Manager()}]{\setlength{\rightskip}{0pt plus 5cm}Game\+Asset\+Manager\+::$\sim$\+Game\+Asset\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGameAssetManager_a1270bd61ecbcca563f079803e40c9b77}
+
+
+Deletes a \hyperlink{classGameAssetManager}{Game\+Asset\+Manager}, in particular it will clean up any modifications to the Open\+G\+L state. 
+
+
+\begin{DoxyCode}
+30                                     \{
+31   glDeleteProgram(\hyperlink{classGameAssetManager_ad7bab17862e06ca692289f934b40548b}{program\_token});
+32 \}
+\end{DoxyCode}
+\hypertarget{classGameAssetManager_a2c9adcb72faa154c87eadc9bafe5269d}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{Game\+Asset\+Manager(\+Game\+Asset\+Manager const \&)}]{\setlength{\rightskip}{0pt plus 5cm}Game\+Asset\+Manager\+::\+Game\+Asset\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\+Asset\+Manager} const \&}]{the\+\_\+manager}
+\end{DoxyParamCaption}
+)}\label{classGameAssetManager_a2c9adcb72faa154c87eadc9bafe5269d}
+
+
+Unimplemented copy constructor -- this means that the \hyperlink{classGameAssetManager}{Game\+Asset\+Manager} may not work as you\textquotesingle{}d expect when being copied. 
+
+
+\begin{DoxyCode}
+38                                                                       \{
+39   \textcolor{comment}{// TODO: implement this}
+40 \}
+\end{DoxyCode}
+\hypertarget{classGameAssetManager_a44f6e2fd6b8ff1dd64e5697f1be7386d}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{Game\+Asset\+Manager(\+Game\+Asset\+Manager const \&\&)}]{\setlength{\rightskip}{0pt plus 5cm}Game\+Asset\+Manager\+::\+Game\+Asset\+Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\+Asset\+Manager} const \&\&}]{the\+\_\+manager}
+\end{DoxyParamCaption}
+)}\label{classGameAssetManager_a44f6e2fd6b8ff1dd64e5697f1be7386d}
+
+
+Unimplemented move constructor -- this unimplemented method violates the C++11 move semantics for \hyperlink{classGameAssetManager}{Game\+Asset\+Manager}. 
+
+
+\begin{DoxyCode}
+46                                                                        \{
+47   \textcolor{comment}{// TODO: implement this}
+48 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGameAssetManager_ad3de8ff00d55ba04728b1de8213b2349}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Add\+Asset@{Add\+Asset}}
+\index{Add\+Asset@{Add\+Asset}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{Add\+Asset(std\+::shared\+\_\+ptr$<$ Game\+Asset $>$)}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+Asset\+Manager\+::\+Add\+Asset (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Game\+Asset} $>$}]{the\+\_\+asset}
+\end{DoxyParamCaption}
+)}\label{classGameAssetManager_ad3de8ff00d55ba04728b1de8213b2349}
+
+
+Adds a \hyperlink{classGameAsset}{Game\+Asset} to the scene graph. 
+
+
+\begin{DoxyCode}
+61                                                                   \{
+62   \hyperlink{classGameAssetManager_a671cddd92f1de4186c582fe0c4297b7d}{draw\_list}.push\_back(the\_asset);
+63 \}
+\end{DoxyCode}
+\hypertarget{classGameAssetManager_a1a1e5c07f941e8d3fda40d9442ac7037}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Create\+G\+L\+E\+S\+Shader@{Create\+G\+L\+E\+S\+Shader}}
+\index{Create\+G\+L\+E\+S\+Shader@{Create\+G\+L\+E\+S\+Shader}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{Create\+G\+L\+E\+S\+Shader(\+G\+Lenum, std\+::string \&)}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Game\+Asset\+Manager\+::\+Create\+G\+L\+E\+S\+Shader (
+\begin{DoxyParamCaption}
+\item[{G\+Lenum}]{type, }
+\item[{std\+::string \&}]{shader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classGameAssetManager_a1a1e5c07f941e8d3fda40d9442ac7037}
+
+
+When given a type of shader to construct and the contents of a shader, \hyperlink{classGameAssetManager_a1a1e5c07f941e8d3fda40d9442ac7037}{Game\+Asset\+Manager\+::\+Create\+G\+L\+E\+S\+Shader} will create the shader or exit with error -\/1. 
+
+\begin{DoxyReturn}{Returns}
+the G\+L \char`\"{}token\char`\"{} for the requested shader. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+110                                                                          \{
+111   GLuint shader\_token;
+112   GLint shader\_ok;
+113   \textcolor{keyword}{auto} source = \hyperlink{classGameAssetManager_a23b124a213308a68a882727127601c97}{ReadShader}(shader);
+114 
+115   \textcolor{keywordflow}{if} (!source.first)
+116     \textcolor{keywordflow}{return} 0;
+117 
+118   shader\_token = glCreateShader(type);
+119   glShaderSource(shader\_token, 1, (\textcolor{keyword}{const} GLchar**)&source.first, &source.second);
+120   glCompileShader(shader\_token);
+121   \textcolor{keyword}{delete}(source.first);
+122 
+123   glGetShaderiv(shader\_token, GL\_COMPILE\_STATUS, &shader\_ok);
+124   \textcolor{keywordflow}{if} (!shader\_ok) \{
+125     GLint maxLength = 0;
+126     glGetShaderiv(shader\_token, GL\_INFO\_LOG\_LENGTH, &maxLength);
+127 
+128     \textcolor{comment}{//The maxLength includes the NULL character}
+129     std::vector<char> errorLog(maxLength);
+130     glGetShaderInfoLog(shader\_token, maxLength, &maxLength, &errorLog[0]);
+131 
+132     \textcolor{comment}{//Provide the infolog in whatever manor you deem best.}
+133     std::cerr << \textcolor{stringliteral}{"Failed to compile "} << shader << \textcolor{stringliteral}{" with error code "} << shader\_ok << std::endl;
+134     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} c: errorLog) \{
+135       std::cerr << c;
+136     \}
+137 
+138     glDeleteShader(shader\_token); \textcolor{comment}{//Don't leak the shader.}
+139     exit(-1);
+140   \}
+141   \textcolor{keywordflow}{return} shader\_token;
+142 \}
+\end{DoxyCode}
+\hypertarget{classGameAssetManager_abec45b44a8b35ad2d7d817ba10e0dd8d}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Create\+G\+L\+Program@{Create\+G\+L\+Program}}
+\index{Create\+G\+L\+Program@{Create\+G\+L\+Program}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{Create\+G\+L\+Program(std\+::string \&, std\+::string \&)}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Game\+Asset\+Manager\+::\+Create\+G\+L\+Program (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{vertex\+\_\+shader, }
+\item[{std\+::string \&}]{fragment\+\_\+shader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classGameAssetManager_abec45b44a8b35ad2d7d817ba10e0dd8d}
+
+
+When given the contents of a vertex shader and fragment shader \hyperlink{classGameAssetManager_abec45b44a8b35ad2d7d817ba10e0dd8d}{Game\+Asset\+Manager\+::\+Create\+G\+L\+Program} will compile and link them. 
+
+This implementation will exit with -\/1 error if an error is detected.
+
+\begin{DoxyReturn}{Returns}
+the G\+L \char`\"{}token\char`\"{} referring to the gl program. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+82                                                                         \{
+83   \textcolor{keyword}{auto} v\_shader\_token = \hyperlink{classGameAssetManager_a1a1e5c07f941e8d3fda40d9442ac7037}{CreateGLESShader}(GL\_VERTEX\_SHADER, vertex\_shader);
+84   \textcolor{keyword}{auto} f\_shader\_token = \hyperlink{classGameAssetManager_a1a1e5c07f941e8d3fda40d9442ac7037}{CreateGLESShader}(GL\_FRAGMENT\_SHADER, fragment\_shader);
+85 
+86   GLint program\_ok;
+87 
+88   GLuint program = glCreateProgram();
+89 
+90   glAttachShader(program, v\_shader\_token);
+91   glAttachShader(program, f\_shader\_token);
+92   glLinkProgram(program);
+93 
+94   glGetProgramiv(program, GL\_LINK\_STATUS, &program\_ok);
+95   \textcolor{keywordflow}{if} (!program\_ok) \{
+96     std::cerr << \textcolor{stringliteral}{"Failed to link shader program:"} << std::endl;
+97     glDeleteProgram(program);
+98     exit(-1);
+99   \}
+100   \textcolor{keywordflow}{return} program;
+101 \}
+\end{DoxyCode}
+\hypertarget{classGameAssetManager_a32837132bd70a9a9ed537323c2d3d886}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Draw@{Draw}}
+\index{Draw@{Draw}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{Draw()}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+Asset\+Manager\+::\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGameAssetManager_a32837132bd70a9a9ed537323c2d3d886}
+
+
+Draws each \hyperlink{classGameAsset}{Game\+Asset} in the scene graph. 
+
+
+\begin{DoxyCode}
+68                             \{
+69   \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} ga: \hyperlink{classGameAssetManager_a671cddd92f1de4186c582fe0c4297b7d}{draw\_list}) \{
+70     ga->Draw(\hyperlink{classGameAssetManager_ad7bab17862e06ca692289f934b40548b}{program\_token});
+71   \}
+72 \}
+\end{DoxyCode}
+\hypertarget{classGameAssetManager_ac72678a4ad5378c685aa6bae84a4e712}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!operator=@{operator=}}
+\index{operator=@{operator=}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{operator=(\+Game\+Asset\+Manager const \&)}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+Asset\+Manager\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\+Asset\+Manager} const \&}]{the\+\_\+manager}
+\end{DoxyParamCaption}
+)}\label{classGameAssetManager_ac72678a4ad5378c685aa6bae84a4e712}
+
+
+Unimplemented assisgnment operator -- violates the expected semantics for assignment in C++11. 
+
+
+\begin{DoxyCode}
+54                                                                     \{
+55   \textcolor{comment}{// TODO: implement this}
+56 \}
+\end{DoxyCode}
+\hypertarget{classGameAssetManager_a23b124a213308a68a882727127601c97}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Read\+Shader@{Read\+Shader}}
+\index{Read\+Shader@{Read\+Shader}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{Read\+Shader(std\+::string \&)}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ G\+Lchar $\ast$, G\+Lint $>$ Game\+Asset\+Manager\+::\+Read\+Shader (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{shader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classGameAssetManager_a23b124a213308a68a882727127601c97}
+
+
+Read\+Shader reads the contents of a file and packs it into a null termintated G\+Lchar $\ast$ which is suitable for sending to Open\+G\+L. 
+
+\begin{DoxyReturn}{Returns}
+a pair consisting of the shader file contents and a holder for the Open\+G\+L \char`\"{}token\char`\"{}. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+151                                                                         \{
+152   std::ifstream input\_file;
+153   GLint length;
+154   input\_file.open(shader, std::ios::in);
+155 
+156   input\_file.seekg(0, std::ios::end);  \textcolor{comment}{// go to the end of the file}
+157   length = input\_file.tellg();    \textcolor{comment}{// get length of the file}
+158   input\_file.seekg(0, std::ios::beg);  \textcolor{comment}{// go to beginning of the file}
+159 
+160   GLchar * buffer = \textcolor{keyword}{new} GLchar[length+1];
+161   input\_file.read(buffer, length);
+162   buffer[length+1]=\textcolor{charliteral}{'\(\backslash\)0'};  \textcolor{comment}{// Ensure null terminated}
+163 
+164   input\_file.close();
+165   \textcolor{keywordflow}{return} std::make\_pair(buffer, length);
+166 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGameAssetManager_a671cddd92f1de4186c582fe0c4297b7d}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!draw\+\_\+list@{draw\+\_\+list}}
+\index{draw\+\_\+list@{draw\+\_\+list}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{draw\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::shared\+\_\+ptr$<${\bf Game\+Asset}$>$ $>$ Game\+Asset\+Manager\+::draw\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}\label{classGameAssetManager_a671cddd92f1de4186c582fe0c4297b7d}
+\hypertarget{classGameAssetManager_ad7bab17862e06ca692289f934b40548b}{}\index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!program\+\_\+token@{program\+\_\+token}}
+\index{program\+\_\+token@{program\+\_\+token}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
+\subsubsection[{program\+\_\+token}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Game\+Asset\+Manager\+::program\+\_\+token\hspace{0.3cm}{\ttfamily [private]}}\label{classGameAssetManager_ad7bab17862e06ca692289f934b40548b}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{GameAssetManager_8h}{Game\+Asset\+Manager.\+h}\item 
+src/\hyperlink{GameAssetManager_8cc}{Game\+Asset\+Manager.\+cc}\end{DoxyCompactItemize}

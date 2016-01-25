@@ -5,7 +5,9 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
 ///
 ///Cube Creation
 ///models coordinates, origin dependant on xyz variables.
-///creates cube using 12 triangles.
+///vertex buffer models coordinates, for the triangles. 
+///colour buffer models the colour of the object triangles.
+///element buffer creates the cube using 12 triangles.
 ///
 
   GLfloat vertex_buffer [] {
@@ -48,8 +50,10 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
   };
   element_buffer_length = sizeof(element_buffer);
 
-  // Transfer buffers to the GPU
-  //
+  ///
+  ///Buffer Implementation 
+  ///Transfer buffers to the GPU
+  ///
 
   // create vertex buffer
   glGenBuffers(1, &vertex_buffer_token);
@@ -115,8 +119,11 @@ void CubeAsset::Draw(GLuint program_token) {
   glUseProgram(program_token);
   checkGLError();
 
-  // use the previously transferred buffer as the vertex array.  This way
-  // we transfer the buffer once -- at construction -- not on every frame.
+  ///
+  ///Buffer Arrays 
+  ///use the previously transferred buffer as the vertex array.  This way
+  ///we transfer the buffer once -- at construction -- not on every frame.
+  ///
   glEnableVertexAttribArray(0);
 
   glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_token);
@@ -132,9 +139,6 @@ void CubeAsset::Draw(GLuint program_token) {
 
   checkGLError();
 
-  ///
-  /// repeated buffer array for color buffer
-  ///
   glBindBuffer(GL_ARRAY_BUFFER, color_buffer_token);
   glVertexAttribPointer(
                         1,                             /* attribute */

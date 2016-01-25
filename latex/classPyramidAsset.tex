@@ -1,0 +1,252 @@
+\hypertarget{classPyramidAsset}{}\section{Pyramid\+Asset Class Reference}
+\label{classPyramidAsset}\index{Pyramid\+Asset@{Pyramid\+Asset}}
+
+
+{\ttfamily \#include $<$Pyramid\+Asset.\+h$>$}
+
+
+
+Inheritance diagram for Pyramid\+Asset\+:
+% FIG 0
+
+
+Collaboration diagram for Pyramid\+Asset\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPyramidAsset_a3f7c6fd658ed0d3e276d7fe6c1de95d1}{Pyramid\+Asset} (G\+Lfloat x, G\+Lfloat y, G\+Lfloat z)
+\item 
+\hyperlink{classPyramidAsset_afb388a196f43a3808b2d4f6fdb89ee84}{$\sim$\+Pyramid\+Asset} ()
+\item 
+virtual void \hyperlink{classPyramidAsset_aaea45da4956d79ec9ab96e9d0ccef3fe}{Draw} (G\+Luint)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPyramidAsset_a34350044042e0098446dc9e0a260cb70}{check\+Error} (std\+::string file, int line)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \hyperlink{classPyramidAsset_a5566105859271b493eab3b5f9c02f866}{element\+\_\+buffer\+\_\+length}
+\item 
+G\+Luint \hyperlink{classPyramidAsset_ae576f67cdec51a52645131919d86a38a}{color\+\_\+buffer\+\_\+length}
+\item 
+G\+Luint \hyperlink{classPyramidAsset_a9252f29d7dc33374d43dd779db4fcce4}{vertex\+\_\+buffer\+\_\+length}
+\item 
+G\+Luint \hyperlink{classPyramidAsset_a54d9cec42bc77d07a66e6c1cd55049b0}{vertex\+\_\+buffer\+\_\+token}
+\item 
+G\+Luint \hyperlink{classPyramidAsset_a7a984ee57fa7deda5aedf8b1f5f85c6f}{color\+\_\+buffer\+\_\+token}
+\item 
+G\+Luint \hyperlink{classPyramidAsset_a6f7e2f50904d2941e33df8eb7f5f9c2d}{element\+\_\+buffer\+\_\+token}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPyramidAsset_a3f7c6fd658ed0d3e276d7fe6c1de95d1}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!Pyramid\+Asset@{Pyramid\+Asset}}
+\index{Pyramid\+Asset@{Pyramid\+Asset}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{Pyramid\+Asset(\+G\+Lfloat x, G\+Lfloat y, G\+Lfloat z)}]{\setlength{\rightskip}{0pt plus 5cm}Pyramid\+Asset\+::\+Pyramid\+Asset (
+\begin{DoxyParamCaption}
+\item[{G\+Lfloat}]{x, }
+\item[{G\+Lfloat}]{y, }
+\item[{G\+Lfloat}]{z}
+\end{DoxyParamCaption}
+)}\label{classPyramidAsset_a3f7c6fd658ed0d3e276d7fe6c1de95d1}
+Pyramid Creation models coordinates, origin dependant on xyz variables. vertex buffer models coordinates, for the triangles. colour buffer models the colour of the object triangles. element buffer creates the cube using 6 triangles.
+\begin{DoxyCode}
+3                                                           \{
+4 
+12 
+13   GLfloat vertex\_buffer [] \{
+14       -0.5f + x,  0.0f + y, -0.5f + z   \textcolor{comment}{//0}
+15     , -0.5f + x,  0.0f + y,  0.5f + z   \textcolor{comment}{//1}
+16     ,  0.5f + x,  0.0f + y, -0.5f + z   \textcolor{comment}{//2}
+17     ,  0.5f + x,  0.0f + y,  0.5f + z   \textcolor{comment}{//3}
+18     ,  0.0f + x,  1.0f + y,  0.0f + z   \textcolor{comment}{//4}
+19   \};
+20   \hyperlink{classPyramidAsset_a9252f29d7dc33374d43dd779db4fcce4}{vertex\_buffer\_length} = \textcolor{keyword}{sizeof}(vertex\_buffer);
+21 
+22   GLfloat color\_buffer [] \{
+23       1.000f, 0.000f, 0.000f \textcolor{comment}{//0}
+24     , 1.000f, 0.000f, 0.000f \textcolor{comment}{//1}
+25     , 1.000f, 0.000f, 0.000f \textcolor{comment}{//2}
+26     , 1.000f, 0.000f, 0.000f \textcolor{comment}{//3}
+27     , 1.000f, 0.000f, 0.000f \textcolor{comment}{//4}
+28   \};
+29   \hyperlink{classPyramidAsset_ae576f67cdec51a52645131919d86a38a}{color\_buffer\_length} = \textcolor{keyword}{sizeof}(color\_buffer);
+30 
+31   GLuint element\_buffer []  \{
+32       1, 4, 0  \textcolor{comment}{// left}
+33     , 0, 4, 2  \textcolor{comment}{// front}
+34     , 2, 4, 3  \textcolor{comment}{// right}
+35     , 1, 4, 3  \textcolor{comment}{// back}
+36     , 0, 1, 2  \textcolor{comment}{// bottom}
+37     , 1, 3, 2     
+38   \};
+39   \hyperlink{classPyramidAsset_a5566105859271b493eab3b5f9c02f866}{element\_buffer\_length} = \textcolor{keyword}{sizeof}(element\_buffer);
+40   \textcolor{comment}{// Transfer buffers to the GPU}
+41   \textcolor{comment}{//}
+42 
+43   \textcolor{comment}{// create vertex buffer}
+44   glGenBuffers(1, &\hyperlink{classPyramidAsset_a54d9cec42bc77d07a66e6c1cd55049b0}{vertex\_buffer\_token});
+45   \textcolor{comment}{// immediately bind the buffer and transfer the data}
+46   glBindBuffer(GL\_ARRAY\_BUFFER, \hyperlink{classPyramidAsset_a54d9cec42bc77d07a66e6c1cd55049b0}{vertex\_buffer\_token});
+47   glBufferData(GL\_ARRAY\_BUFFER, \hyperlink{classPyramidAsset_a9252f29d7dc33374d43dd779db4fcce4}{vertex\_buffer\_length}, vertex\_buffer, GL\_STATIC\_DRAW);
+48 
+49   \textcolor{comment}{// create color buffer}
+50   glGenBuffers(1, &\hyperlink{classPyramidAsset_a7a984ee57fa7deda5aedf8b1f5f85c6f}{color\_buffer\_token});
+51   \textcolor{comment}{// immediately bind the buffer and transfer the data}
+52   glBindBuffer(GL\_ARRAY\_BUFFER, \hyperlink{classPyramidAsset_a7a984ee57fa7deda5aedf8b1f5f85c6f}{color\_buffer\_token});
+53   glBufferData(GL\_ARRAY\_BUFFER, \hyperlink{classPyramidAsset_ae576f67cdec51a52645131919d86a38a}{color\_buffer\_length}, color\_buffer, GL\_STATIC\_DRAW);
+54   
+55   glGenBuffers(1, &\hyperlink{classPyramidAsset_a6f7e2f50904d2941e33df8eb7f5f9c2d}{element\_buffer\_token});
+56   glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, \hyperlink{classPyramidAsset_a6f7e2f50904d2941e33df8eb7f5f9c2d}{element\_buffer\_token});
+57   glBufferData(GL\_ELEMENT\_ARRAY\_BUFFER, \hyperlink{classPyramidAsset_a5566105859271b493eab3b5f9c02f866}{element\_buffer\_length}, element\_buffer, 
+      GL\_STATIC\_DRAW);
+58 \}
+\end{DoxyCode}
+\hypertarget{classPyramidAsset_afb388a196f43a3808b2d4f6fdb89ee84}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!````~Pyramid\+Asset@{$\sim$\+Pyramid\+Asset}}
+\index{````~Pyramid\+Asset@{$\sim$\+Pyramid\+Asset}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{$\sim$\+Pyramid\+Asset()}]{\setlength{\rightskip}{0pt plus 5cm}Pyramid\+Asset\+::$\sim$\+Pyramid\+Asset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classPyramidAsset_afb388a196f43a3808b2d4f6fdb89ee84}
+
+\begin{DoxyCode}
+60                             \{
+61 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPyramidAsset_a34350044042e0098446dc9e0a260cb70}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!check\+Error@{check\+Error}}
+\index{check\+Error@{check\+Error}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{check\+Error(std\+::string file, int line)}]{\setlength{\rightskip}{0pt plus 5cm}void Pyramid\+Asset\+::check\+Error (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classPyramidAsset_a34350044042e0098446dc9e0a260cb70}
+
+\begin{DoxyCode}
+70                                                       \{
+71   GLenum gl\_error = glGetError();
+72   \textcolor{keywordflow}{if}(GL\_NO\_ERROR != gl\_error) \{
+73     std::cerr << \textcolor{stringliteral}{"GL error in "} << file << \textcolor{stringliteral}{" at line "} << line << \textcolor{stringliteral}{" error: "} << gl\_error << std::endl;
+74     exit(-1);
+75   \}
+76 \}
+\end{DoxyCode}
+\hypertarget{classPyramidAsset_aaea45da4956d79ec9ab96e9d0ccef3fe}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!Draw@{Draw}}
+\index{Draw@{Draw}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{Draw(\+G\+Luint)}]{\setlength{\rightskip}{0pt plus 5cm}void Pyramid\+Asset\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{program\+\_\+token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPyramidAsset_aaea45da4956d79ec9ab96e9d0ccef3fe}
+repeated buffer array for color buffer
+
+Implements \hyperlink{classGameAsset_a961aa51ca0a9961fc584c0b5d5431300}{Game\+Asset}.
+
+
+\begin{DoxyCode}
+78                                             \{
+79   \textcolor{keywordflow}{if}(!glIsProgram(program\_token)) \{
+80     std::cerr << \textcolor{stringliteral}{"Drawing Pyramid with invalid program"} << std::endl;
+81     \textcolor{keywordflow}{return};
+82   \}
+83   GLint validation\_ok;
+84   glValidateProgram(program\_token);
+85   glGetProgramiv(program\_token, GL\_VALIDATE\_STATUS, &validation\_ok);
+86   \textcolor{keywordflow}{if}(!validation\_ok) \{
+87     GLint maxLength = 0;
+88     glGetProgramiv(program\_token, GL\_INFO\_LOG\_LENGTH, &maxLength);
+89 
+90     \textcolor{comment}{//The maxLength includes the NULL character}
+91     std::vector<char> errorLog(maxLength);
+92     glGetProgramInfoLog(program\_token, maxLength, &maxLength, &errorLog[0]);
+93 
+94     std::cerr << \textcolor{stringliteral}{"Invalid program "} << program\_token << \textcolor{stringliteral}{" with error code "} << validation\_ok << std::endl;
+95     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} c: errorLog) \{
+96       std::cerr << c;
+97     \}
+98     exit(-1);
+99   \}
+100 
+101   GLuint position\_attrib = glGetAttribLocation(program\_token, \textcolor{stringliteral}{"position"});
+102   \hyperlink{PyramidAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+103 
+104   glUseProgram(program\_token);
+105   \hyperlink{PyramidAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+106 
+107   \textcolor{comment}{// use the previously transferred buffer as the vertex array.  This way}
+108   \textcolor{comment}{// we transfer the buffer once -- at construction -- not on every frame.}
+109   glEnableVertexAttribArray(0);
+110 
+111   glBindBuffer(GL\_ARRAY\_BUFFER, \hyperlink{classPyramidAsset_a54d9cec42bc77d07a66e6c1cd55049b0}{vertex\_buffer\_token});
+112   glVertexAttribPointer(
+113                         position\_attrib,               \textcolor{comment}{/* attribute */}
+114                         3,                             \textcolor{comment}{/* size */}
+115                         GL\_FLOAT,                      \textcolor{comment}{/* type */}
+116                         GL\_FALSE,                      \textcolor{comment}{/* normalized? */}
+117                         0,                             \textcolor{comment}{/* stride */}
+118                         (\textcolor{keywordtype}{void}*)0                       \textcolor{comment}{/* array buffer offset */}
+119                         );
+120   glEnableVertexAttribArray(1);
+121 
+122   \hyperlink{PyramidAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+123 
+127   glBindBuffer(GL\_ARRAY\_BUFFER, \hyperlink{classPyramidAsset_a7a984ee57fa7deda5aedf8b1f5f85c6f}{color\_buffer\_token});
+128   glVertexAttribPointer(
+129                         1,                             \textcolor{comment}{/* attribute */}
+130                         3,                             \textcolor{comment}{/* size */}
+131                         GL\_FLOAT,                      \textcolor{comment}{/* type */}
+132                         GL\_FALSE,                      \textcolor{comment}{/* normalized? */}
+133                         0,                             \textcolor{comment}{/* stride */}
+134                         (\textcolor{keywordtype}{void}*)0                       \textcolor{comment}{/* array buffer offset */}
+135                         );
+136 
+137   \hyperlink{PyramidAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+138 
+139   glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, \hyperlink{classPyramidAsset_a6f7e2f50904d2941e33df8eb7f5f9c2d}{element\_buffer\_token});
+140   glDrawElements(
+141                  GL\_TRIANGLES,
+142                  \hyperlink{classPyramidAsset_a5566105859271b493eab3b5f9c02f866}{element\_buffer\_length},
+143                  GL\_UNSIGNED\_INT,
+144                  (GLvoid*) 0
+145                  );
+146 
+147   \hyperlink{PyramidAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+148 
+149   glDisableVertexAttribArray(position\_attrib);
+150 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPyramidAsset_ae576f67cdec51a52645131919d86a38a}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!color\+\_\+buffer\+\_\+length@{color\+\_\+buffer\+\_\+length}}
+\index{color\+\_\+buffer\+\_\+length@{color\+\_\+buffer\+\_\+length}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{color\+\_\+buffer\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Pyramid\+Asset\+::color\+\_\+buffer\+\_\+length\hspace{0.3cm}{\ttfamily [private]}}\label{classPyramidAsset_ae576f67cdec51a52645131919d86a38a}
+\hypertarget{classPyramidAsset_a7a984ee57fa7deda5aedf8b1f5f85c6f}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!color\+\_\+buffer\+\_\+token@{color\+\_\+buffer\+\_\+token}}
+\index{color\+\_\+buffer\+\_\+token@{color\+\_\+buffer\+\_\+token}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{color\+\_\+buffer\+\_\+token}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Pyramid\+Asset\+::color\+\_\+buffer\+\_\+token\hspace{0.3cm}{\ttfamily [private]}}\label{classPyramidAsset_a7a984ee57fa7deda5aedf8b1f5f85c6f}
+\hypertarget{classPyramidAsset_a5566105859271b493eab3b5f9c02f866}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!element\+\_\+buffer\+\_\+length@{element\+\_\+buffer\+\_\+length}}
+\index{element\+\_\+buffer\+\_\+length@{element\+\_\+buffer\+\_\+length}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{element\+\_\+buffer\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Pyramid\+Asset\+::element\+\_\+buffer\+\_\+length\hspace{0.3cm}{\ttfamily [private]}}\label{classPyramidAsset_a5566105859271b493eab3b5f9c02f866}
+\hypertarget{classPyramidAsset_a6f7e2f50904d2941e33df8eb7f5f9c2d}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!element\+\_\+buffer\+\_\+token@{element\+\_\+buffer\+\_\+token}}
+\index{element\+\_\+buffer\+\_\+token@{element\+\_\+buffer\+\_\+token}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{element\+\_\+buffer\+\_\+token}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Pyramid\+Asset\+::element\+\_\+buffer\+\_\+token\hspace{0.3cm}{\ttfamily [private]}}\label{classPyramidAsset_a6f7e2f50904d2941e33df8eb7f5f9c2d}
+\hypertarget{classPyramidAsset_a9252f29d7dc33374d43dd779db4fcce4}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!vertex\+\_\+buffer\+\_\+length@{vertex\+\_\+buffer\+\_\+length}}
+\index{vertex\+\_\+buffer\+\_\+length@{vertex\+\_\+buffer\+\_\+length}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{vertex\+\_\+buffer\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Pyramid\+Asset\+::vertex\+\_\+buffer\+\_\+length\hspace{0.3cm}{\ttfamily [private]}}\label{classPyramidAsset_a9252f29d7dc33374d43dd779db4fcce4}
+\hypertarget{classPyramidAsset_a54d9cec42bc77d07a66e6c1cd55049b0}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!vertex\+\_\+buffer\+\_\+token@{vertex\+\_\+buffer\+\_\+token}}
+\index{vertex\+\_\+buffer\+\_\+token@{vertex\+\_\+buffer\+\_\+token}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{vertex\+\_\+buffer\+\_\+token}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Pyramid\+Asset\+::vertex\+\_\+buffer\+\_\+token\hspace{0.3cm}{\ttfamily [private]}}\label{classPyramidAsset_a54d9cec42bc77d07a66e6c1cd55049b0}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{PyramidAsset_8h}{Pyramid\+Asset.\+h}\item 
+src/\hyperlink{PyramidAsset_8cc}{Pyramid\+Asset.\+cc}\end{DoxyCompactItemize}

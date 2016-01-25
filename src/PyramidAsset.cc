@@ -5,7 +5,9 @@ PyramidAsset::PyramidAsset(GLfloat x, GLfloat y, GLfloat z) {
 ///
 ///Pyramid Creation
 ///models coordinates, origin dependant on xyz variables.
-///creates Pyramid using 6 triangles.
+///vertex buffer models coordinates, for the triangles. 
+///colour buffer models the colour of the object triangles.
+///element buffer creates the cube using 6 triangles.
 ///
 
   GLfloat vertex_buffer [] {
