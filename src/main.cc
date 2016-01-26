@@ -138,7 +138,7 @@ ApplicationMode ParseOptions (int argc, char ** argv) {
 }
 
 int main(int argc, char ** argv) {
-  Uint32 delay = 1000/60; // in milliseconds
+  Uint32 delay = 1000/30; // in milliseconds
 
   auto mode = ParseOptions(argc, argv);
   auto window = InitWorld();

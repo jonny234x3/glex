@@ -135,7 +135,7 @@ void CubeAsset::Draw(GLuint program_token) {
                         0,                             /* stride */
                         (void*)0                       /* array buffer offset */
                         );
-  glEnableVertexAttribArray(1);
+  glEnableVertexAttribArray(position_attrib);
 
   checkGLError();
 
