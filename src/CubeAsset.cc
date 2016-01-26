@@ -23,14 +23,14 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
   vertex_buffer_length = sizeof(vertex_buffer);
 
   GLfloat color_buffer [] {
-      0.000f, 0.000f, 1.000f //0
-    , 0.000f, 0.000f, 1.000f //1
-    , 0.000f, 0.000f, 1.000f //2
-    , 0.000f, 0.000f, 1.000f //3
-    , 0.000f, 0.000f, 1.000f //4
-    , 0.000f, 0.000f, 1.000f //5
-    , 0.000f, 0.000f, 1.000f //6
-    , 0.000f, 0.000f, 1.000f //7
+      1.000f, 1.000f, 0.000f //0
+    , 1.000f, 1.000f, 0.000f //1
+    , 1.000f, 1.000f, 0.000f //2
+    , 1.000f, 1.000f, 0.000f //3
+    , 1.000f, 1.000f, 0.000f //4
+    , 1.000f, 1.000f, 0.000f //5
+    , 1.000f, 1.000f, 0.000f //6
+    , 1.000f, 1.000f, 0.000f //7
   };
   color_buffer_length = sizeof(color_buffer);
 
