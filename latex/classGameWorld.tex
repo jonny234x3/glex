@@ -40,54 +40,58 @@ The \hyperlink{classGameWorld}{Game\+World} currently has a very simplified scen
 
 We thread the Application\+Mode through the \hyperlink{classGameWorld}{Game\+World} ss we want to read it in from the user. 
 
-Threading the state through the various function calls is preferable (in this case) to having some kind of global state. Cube spawning with Array Using a 2\+D array to spawn multiple voxels, to spell a word
+Threading the state through the various function calls is preferable (in this case) to having some kind of global state. Cube spawning with Array Using a 2\+D array to spawn multiple voxels 1 -\/ Floor piece 2 -\/ Floor piece and cube 3 -\/ Floor piece and pyramid
 
-Pyramid Spawning using asset\+\_\+manager to add the instance of a pyramid.
+Spawning Floor floor is spawned with; X offset equal to the half of the x plane so the positions are roughly center Y is a constant as the floor is one flat plane Z is determined by the Y value
 
-For loop to read positions in the array. using asset\+\_\+manager to add the instance of a cube.
+Spawning Cubes Spawns floor asset and a Cube asset
+
+Spawning Pyramids Spawns floor asset and a Pyramid asset above it
 \begin{DoxyCode}
-3                                           : \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager} (make\_shared<GameAssetManager>(mode)
+5                                           : \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager} (make\_shared<GameAssetManager>(mode)
       )\{
-4 
-9 
-10 \textcolor{keywordtype}{int} X,Y;
-11 \textcolor{keywordtype}{int} Z = -10;
-12 \textcolor{keywordtype}{int} planeX = 12;
-13 \textcolor{keywordtype}{int} planeY = 12;
+6 
 14 
-15 \textcolor{keywordtype}{int} plane[planeX][planeY] = \{
-16 
-17 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
-18 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
-19 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
-20 \{1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1\},
-21 \{1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0\},
-22 \{1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1\},
-23 \{1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0\},
-24 \{1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0\},
-25 \{1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1\},
-26 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
-27 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\},
-28 \{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\}
-29 \};
-30 
-35 
-36 \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<PyramidAsset>(-3.0f, -2.0f, 1.0f));
-37 \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<PyramidAsset>(-3.0f, 2.0f, 1.0f));
-38 \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<PyramidAsset>(3.0f, 2.0f, -2.0f));
-39 \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<PyramidAsset>(0.0f, 2.0f, -6.0f));
-40 
-45 
-46  \textcolor{keywordflow}{for}( X=0; X<planeX; X++)\{
-47    \textcolor{keywordflow}{for} (Y=0; Y<planeY; Y++)\{
-48     \textcolor{keywordflow}{if}( plane[Y][X] == 1)\{  
-49       \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(std::make\_shared<CubeAsset>(X, -Y, Z));
-50       \textcolor{comment}{//spawning a cube}
-51     \}    
-52    \}
-53  \}
-54 
-55 \}
+15 \textcolor{keywordtype}{int} X,Y;
+16 \textcolor{keywordtype}{int} Z = -1;
+17 \textcolor{keywordtype}{int} planeX = 12;
+18 \textcolor{keywordtype}{int} planeY = 12;
+19 
+20 \textcolor{keywordtype}{int} plane[planeX][planeY] = \{
+21 \{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1\},
+22 \{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1\},
+23 \{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1\},
+24 \{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1\},
+25 \{1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1\},
+26 \{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1\},
+27 \{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1\},
+28 \{1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1\},
+29 \{1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 3\},
+30 \{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1\},
+31 \{1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1\},
+32 \{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1\},
+33 \};
+34 
+42 
+43  \textcolor{keywordflow}{for}( X=0; X<planeX; X++)\{
+44    \textcolor{keywordflow}{for} (Y=0; Y<planeY; Y++)\{
+45     \textcolor{keywordflow}{if}( plane[Y][X] == 1)\{  
+46      \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(make\_shared<FloorAsset>((X)-(planeX/2),-6.00f,(Z*Y)));
+47     \}    
+48 
+53     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( plane[Y][X] == 2)\{
+54       \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(make\_shared<FloorAsset>((X)-(planeX/2),-6.00f,(Z*Y)));
+55       \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(make\_shared<CubeAsset>((X)-(planeX/2),2.00f,(Z*Y)));
+56 
+57     \}
+62     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( plane[Y][X] == 3)\{
+63       \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(make\_shared<FloorAsset>((X)-(planeX/2),-6.00f,(Z*Y)));
+64       \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->AddAsset(make\_shared<PyramidAsset>((X)-(planeX/2),3.00f,(Z*Y)));
+65     \}
+66   \}
+67  \}
+68 
+69 \}
 \end{DoxyCode}
 
 
@@ -105,9 +109,9 @@ Calling \hyperlink{classGameWorld_a275418607d8286979b276f165ad5876b}{Draw()} wil
 
 
 \begin{DoxyCode}
-57                      \{
-58   \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->Draw();
-59 \}
+71                      \{
+72   \hyperlink{classGameWorld_aec5c0bca4fb5a41e4aac2dce2871266d}{asset\_manager}->Draw();
+73 \}
 \end{DoxyCode}
 
 

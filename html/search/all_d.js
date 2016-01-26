@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['tick',['tick',['../main_8cc.html#a70eaa727262f633037c3f4b7d3ff24c2',1,'main.cc']]],
-  ['transform',['TRANSFORM',['../common_8h.html#add86e7c88dd109abea3f708b422f31f0a25f73324dc93d9024c0c75b4e6815335',1,'common.h']]]
+  ['scale',['SCALE',['../common_8h.html#add86e7c88dd109abea3f708b422f31f0a593be05a10070b4e7e0856e20590eaaf',1,'common.h']]],
+  ['sdlwindowdeleter',['SDLWindowDeleter',['../structSDLWindowDeleter.html',1,'']]],
+  ['stdc_5fheaders',['STDC_HEADERS',['../config_8h.html#a550e5c272cc3cf3814651721167dcd23',1,'config.h']]]
 ];

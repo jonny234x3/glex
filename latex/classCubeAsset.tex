@@ -7,11 +7,23 @@
 
 
 Inheritance diagram for Cube\+Asset\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classCubeAsset__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Cube\+Asset\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classCubeAsset__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -73,14 +85,14 @@ Buffer Implementation Transfer buffers to the G\+P\+U
 23   \hyperlink{classCubeAsset_a3054ed8a7d6cc1575aebdfc40038847b}{vertex\_buffer\_length} = \textcolor{keyword}{sizeof}(vertex\_buffer);
 24 
 25   GLfloat color\_buffer [] \{
-26       0.000f, 0.000f, 1.000f \textcolor{comment}{//0}
-27     , 0.000f, 0.000f, 1.000f \textcolor{comment}{//1}
-28     , 0.000f, 0.000f, 1.000f \textcolor{comment}{//2}
-29     , 0.000f, 0.000f, 1.000f \textcolor{comment}{//3}
-30     , 0.000f, 0.000f, 1.000f \textcolor{comment}{//4}
-31     , 0.000f, 0.000f, 1.000f \textcolor{comment}{//5}
-32     , 0.000f, 0.000f, 1.000f \textcolor{comment}{//6}
-33     , 0.000f, 0.000f, 1.000f \textcolor{comment}{//7}
+26       1.000f, 1.000f, 0.000f \textcolor{comment}{//0}
+27     , 1.000f, 1.000f, 0.000f \textcolor{comment}{//1}
+28     , 1.000f, 1.000f, 0.000f \textcolor{comment}{//2}
+29     , 1.000f, 1.000f, 0.000f \textcolor{comment}{//3}
+30     , 1.000f, 1.000f, 0.000f \textcolor{comment}{//4}
+31     , 1.000f, 1.000f, 0.000f \textcolor{comment}{//5}
+32     , 1.000f, 1.000f, 0.000f \textcolor{comment}{//6}
+33     , 1.000f, 1.000f, 0.000f \textcolor{comment}{//7}
 34   \};
 35   \hyperlink{classCubeAsset_ac4c2395c395e9bcebc5d15d425a505ec}{color\_buffer\_length} = \textcolor{keyword}{sizeof}(color\_buffer);
 36 
@@ -205,7 +217,7 @@ Implements \hyperlink{classGameAsset_a961aa51ca0a9961fc584c0b5d5431300}{Game\+As
 135                         0,                             \textcolor{comment}{/* stride */}
 136                         (\textcolor{keywordtype}{void}*)0                       \textcolor{comment}{/* array buffer offset */}
 137                         );
-138   glEnableVertexAttribArray(1);
+138   glEnableVertexAttribArray(position\_attrib);
 139 
 140   \hyperlink{CubeAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
 141 

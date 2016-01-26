@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['parseoptions',['ParseOptions',['../main_8cc.html#aba227fab3b52f0ce7c5b89d75b88dcdc',1,'main.cc']]],
-  ['pyramidasset',['PyramidAsset',['../classPyramidAsset.html#a3f7c6fd658ed0d3e276d7fe6c1de95d1',1,'PyramidAsset']]]
+  ['operator_28_29',['operator()',['../structSDLWindowDeleter.html#a2aedcc99c3756ae090c38badabeb10b1',1,'SDLWindowDeleter']]],
+  ['operator_3d',['operator=',['../classGameAssetManager.html#ac72678a4ad5378c685aa6bae84a4e712',1,'GameAssetManager']]]
 ];

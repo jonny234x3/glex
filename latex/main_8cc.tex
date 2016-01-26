@@ -9,7 +9,13 @@
 {\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Game\+World.\+h\char`\"{}}\\*
 Include dependency graph for main.\+cc\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc__incl}
+\end{center}
+\end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -148,7 +154,7 @@ int \hyperlink{main_8cc_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char
 
 \begin{DoxyCode}
 140                                  \{
-141   Uint32 delay = 1000/60; \textcolor{comment}{// in milliseconds}
+141   Uint32 delay = 1000/30; \textcolor{comment}{// in milliseconds}
 142 
 143   \textcolor{keyword}{auto} mode = \hyperlink{main_8cc_aba227fab3b52f0ce7c5b89d75b88dcdc}{ParseOptions}(argc, argv);
 144   \textcolor{keyword}{auto} window = \hyperlink{main_8cc_acab7ade71cf38099442ca5df2495223d}{InitWorld}();

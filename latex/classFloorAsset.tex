@@ -1,0 +1,275 @@
+\hypertarget{classFloorAsset}{}\section{Floor\+Asset Class Reference}
+\label{classFloorAsset}\index{Floor\+Asset@{Floor\+Asset}}
+
+
+{\ttfamily \#include $<$Floor\+Asset.\+h$>$}
+
+
+
+Inheritance diagram for Floor\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classFloorAsset__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Floor\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classFloorAsset__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFloorAsset_a383f25a2759fabab5c91702481c373a5}{Floor\+Asset} (G\+Lfloat x, G\+Lfloat y, G\+Lfloat z)
+\item 
+\hyperlink{classFloorAsset_a7d782882bb08ee2a2285821275383856}{$\sim$\+Floor\+Asset} ()
+\item 
+virtual void \hyperlink{classFloorAsset_a14650eb2c2cd75e990c351bad8636279}{Draw} (G\+Luint)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFloorAsset_a21718a4922300674837bd8cc2cb9063b}{check\+Error} (std\+::string file, int line)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \hyperlink{classFloorAsset_ad42145830ac04a31ca27fd290cf0ef08}{element\+\_\+buffer\+\_\+length}
+\item 
+G\+Luint \hyperlink{classFloorAsset_a5e4aa3ffef39690775a950c85fb08a2a}{color\+\_\+buffer\+\_\+length}
+\item 
+G\+Luint \hyperlink{classFloorAsset_a9edf10bbcfbc61006fafb4a10d826a76}{vertex\+\_\+buffer\+\_\+length}
+\item 
+G\+Luint \hyperlink{classFloorAsset_a5fdd868b2e2a52dabfe2387c903e3862}{vertex\+\_\+buffer\+\_\+token}
+\item 
+G\+Luint \hyperlink{classFloorAsset_a54863f3a9f4c2f484342359ac49ca419}{color\+\_\+buffer\+\_\+token}
+\item 
+G\+Luint \hyperlink{classFloorAsset_ab9be3a61a423156c7e79c73cd1cd5fc4}{element\+\_\+buffer\+\_\+token}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFloorAsset_a383f25a2759fabab5c91702481c373a5}{}\index{Floor\+Asset@{Floor\+Asset}!Floor\+Asset@{Floor\+Asset}}
+\index{Floor\+Asset@{Floor\+Asset}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{Floor\+Asset(\+G\+Lfloat x, G\+Lfloat y, G\+Lfloat z)}]{\setlength{\rightskip}{0pt plus 5cm}Floor\+Asset\+::\+Floor\+Asset (
+\begin{DoxyParamCaption}
+\item[{G\+Lfloat}]{x, }
+\item[{G\+Lfloat}]{y, }
+\item[{G\+Lfloat}]{z}
+\end{DoxyParamCaption}
+)}\label{classFloorAsset_a383f25a2759fabab5c91702481c373a5}
+Cube Creation This uses the same definitions as \hyperlink{classCubeAsset}{Cube\+Asset} with different coordinates. models coordinates, origin dependant on xyz variables. vertex buffer models coordinates, for the triangles. colour buffer models the colour of the object triangles. element buffer creates the cube using 12 triangles.
+
+Buffer Implementation Transfer buffers to the G\+P\+U
+\begin{DoxyCode}
+3                                                       \{
+4 
+13 
+14   GLfloat vertex\_buffer [] \{
+15       -0.5f + x, -0.5f + y, -0.5f + z   \textcolor{comment}{//0}
+16     , -0.5f + x,  0.5f + y, -0.5f + z   \textcolor{comment}{//1}
+17     ,  0.5f + x, -0.5f + y, -0.5f + z   \textcolor{comment}{//2}
+18     ,  0.5f + x,  0.5f + y, -0.5f + z   \textcolor{comment}{//3}
+19     , -0.5f + x, -0.5f + y,  0.5f + z   \textcolor{comment}{//5}
+20     , -0.5f + x,  0.5f + y,  0.5f + z   \textcolor{comment}{//4}
+21     ,  0.5f + x, -0.5f + y,  0.5f + z   \textcolor{comment}{//6}
+22     ,  0.5f + x,  0.5f + y,  0.5f + z   \textcolor{comment}{//7}
+23   \};
+24   \hyperlink{classFloorAsset_a9edf10bbcfbc61006fafb4a10d826a76}{vertex\_buffer\_length} = \textcolor{keyword}{sizeof}(vertex\_buffer);
+25 
+26   GLfloat color\_buffer [] \{
+27       0.000f, 1.000f, 0.000f \textcolor{comment}{//0}
+28     , 0.000f, 1.000f, 0.000f \textcolor{comment}{//1}
+29     , 0.000f, 1.000f, 0.000f \textcolor{comment}{//2}
+30     , 0.000f, 1.000f, 0.000f \textcolor{comment}{//3}
+31     , 0.000f, 1.000f, 0.000f \textcolor{comment}{//4}
+32     , 0.000f, 1.000f, 0.000f \textcolor{comment}{//5}
+33     , 0.000f, 1.000f, 0.000f \textcolor{comment}{//6}
+34     , 0.000f, 1.000f, 0.000f \textcolor{comment}{//7}
+35   \};
+36   \hyperlink{classFloorAsset_a5e4aa3ffef39690775a950c85fb08a2a}{color\_buffer\_length} = \textcolor{keyword}{sizeof}(color\_buffer);
+37 
+38   GLuint element\_buffer []  \{
+39       0, 1, 2  \textcolor{comment}{// front}
+40     , 1, 3, 2  
+41     , 4, 5, 6  \textcolor{comment}{// back}
+42     , 5, 7, 6  
+43     , 1, 5, 3  \textcolor{comment}{// top}
+44     , 5, 7, 3 
+45     , 0, 1, 4  \textcolor{comment}{// left}
+46     , 1, 5, 4  
+47     , 2, 3, 6  \textcolor{comment}{// right}
+48     , 3, 7, 6  
+49     , 0, 4, 2  \textcolor{comment}{// bottom}
+50     , 4, 2, 6     
+51   \};
+52   \hyperlink{classFloorAsset_ad42145830ac04a31ca27fd290cf0ef08}{element\_buffer\_length} = \textcolor{keyword}{sizeof}(element\_buffer);
+53 
+58 
+59   \textcolor{comment}{// create vertex buffer}
+60   glGenBuffers(1, &\hyperlink{classFloorAsset_a5fdd868b2e2a52dabfe2387c903e3862}{vertex\_buffer\_token});
+61   \textcolor{comment}{// immediately bind the buffer and transfer the data}
+62   glBindBuffer(GL\_ARRAY\_BUFFER, \hyperlink{classFloorAsset_a5fdd868b2e2a52dabfe2387c903e3862}{vertex\_buffer\_token});
+63   glBufferData(GL\_ARRAY\_BUFFER, \hyperlink{classFloorAsset_a9edf10bbcfbc61006fafb4a10d826a76}{vertex\_buffer\_length}, vertex\_buffer, GL\_STATIC\_DRAW);
+64 
+65   \textcolor{comment}{// create color buffer}
+66   glGenBuffers(1, &\hyperlink{classFloorAsset_a54863f3a9f4c2f484342359ac49ca419}{color\_buffer\_token});
+67   \textcolor{comment}{// immediately bind the buffer and transfer the data}
+68   glBindBuffer(GL\_ARRAY\_BUFFER, \hyperlink{classFloorAsset_a54863f3a9f4c2f484342359ac49ca419}{color\_buffer\_token});
+69   glBufferData(GL\_ARRAY\_BUFFER, \hyperlink{classFloorAsset_a5e4aa3ffef39690775a950c85fb08a2a}{color\_buffer\_length}, color\_buffer, GL\_STATIC\_DRAW);
+70   
+71   glGenBuffers(1, &\hyperlink{classFloorAsset_ab9be3a61a423156c7e79c73cd1cd5fc4}{element\_buffer\_token});
+72   glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, \hyperlink{classFloorAsset_ab9be3a61a423156c7e79c73cd1cd5fc4}{element\_buffer\_token});
+73   glBufferData(GL\_ELEMENT\_ARRAY\_BUFFER, \hyperlink{classFloorAsset_ad42145830ac04a31ca27fd290cf0ef08}{element\_buffer\_length}, element\_buffer, 
+      GL\_STATIC\_DRAW);
+74 \}
+\end{DoxyCode}
+\hypertarget{classFloorAsset_a7d782882bb08ee2a2285821275383856}{}\index{Floor\+Asset@{Floor\+Asset}!````~Floor\+Asset@{$\sim$\+Floor\+Asset}}
+\index{````~Floor\+Asset@{$\sim$\+Floor\+Asset}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{$\sim$\+Floor\+Asset()}]{\setlength{\rightskip}{0pt plus 5cm}Floor\+Asset\+::$\sim$\+Floor\+Asset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classFloorAsset_a7d782882bb08ee2a2285821275383856}
+
+\begin{DoxyCode}
+76                         \{
+77 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFloorAsset_a21718a4922300674837bd8cc2cb9063b}{}\index{Floor\+Asset@{Floor\+Asset}!check\+Error@{check\+Error}}
+\index{check\+Error@{check\+Error}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{check\+Error(std\+::string file, int line)}]{\setlength{\rightskip}{0pt plus 5cm}void Floor\+Asset\+::check\+Error (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classFloorAsset_a21718a4922300674837bd8cc2cb9063b}
+
+\begin{DoxyCode}
+86                                                     \{
+87   GLenum gl\_error = glGetError();
+88   \textcolor{keywordflow}{if}(GL\_NO\_ERROR != gl\_error) \{
+89     std::cerr << \textcolor{stringliteral}{"GL error in "} << file << \textcolor{stringliteral}{" at line "} << line << \textcolor{stringliteral}{" error: "} << gl\_error << std::endl;
+90     exit(-1);
+91   \}
+92 \}
+\end{DoxyCode}
+\hypertarget{classFloorAsset_a14650eb2c2cd75e990c351bad8636279}{}\index{Floor\+Asset@{Floor\+Asset}!Draw@{Draw}}
+\index{Draw@{Draw}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{Draw(\+G\+Luint)}]{\setlength{\rightskip}{0pt plus 5cm}void Floor\+Asset\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{program\+\_\+token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classFloorAsset_a14650eb2c2cd75e990c351bad8636279}
+Buffer Arrays use the previously transferred buffer as the vertex array. This way we transfer the buffer once -- at construction -- not on every frame.
+
+Implements \hyperlink{classGameAsset_a961aa51ca0a9961fc584c0b5d5431300}{Game\+Asset}.
+
+
+\begin{DoxyCode}
+94                                           \{
+95   \textcolor{keywordflow}{if}(!glIsProgram(program\_token)) \{
+96     std::cerr << \textcolor{stringliteral}{"Drawing Floor with invalid program"} << std::endl;
+97     \textcolor{keywordflow}{return};
+98   \}
+99   GLint validation\_ok;
+100   glValidateProgram(program\_token);
+101   glGetProgramiv(program\_token, GL\_VALIDATE\_STATUS, &validation\_ok);
+102   \textcolor{keywordflow}{if}(!validation\_ok) \{
+103     GLint maxLength = 0;
+104     glGetProgramiv(program\_token, GL\_INFO\_LOG\_LENGTH, &maxLength);
+105 
+106     \textcolor{comment}{//The maxLength includes the NULL character}
+107     std::vector<char> errorLog(maxLength);
+108     glGetProgramInfoLog(program\_token, maxLength, &maxLength, &errorLog[0]);
+109 
+110     std::cerr << \textcolor{stringliteral}{"Invalid program "} << program\_token << \textcolor{stringliteral}{" with error code "} << validation\_ok << std::endl;
+111     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} c: errorLog) \{
+112       std::cerr << c;
+113     \}
+114     exit(-1);
+115   \}
+116 
+117   GLuint position\_attrib = glGetAttribLocation(program\_token, \textcolor{stringliteral}{"position"});
+118   \hyperlink{FloorAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+119 
+120   glUseProgram(program\_token);
+121   \hyperlink{FloorAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+122 
+128   glEnableVertexAttribArray(0);
+129 
+130   glBindBuffer(GL\_ARRAY\_BUFFER, \hyperlink{classFloorAsset_a5fdd868b2e2a52dabfe2387c903e3862}{vertex\_buffer\_token});
+131   glVertexAttribPointer(
+132                         position\_attrib,               \textcolor{comment}{/* attribute */}
+133                         3,                             \textcolor{comment}{/* size */}
+134                         GL\_FLOAT,                      \textcolor{comment}{/* type */}
+135                         GL\_FALSE,                      \textcolor{comment}{/* normalized? */}
+136                         0,                             \textcolor{comment}{/* stride */}
+137                         (\textcolor{keywordtype}{void}*)0                       \textcolor{comment}{/* array buffer offset */}
+138                         );
+139   glEnableVertexAttribArray(1);
+140 
+141   \hyperlink{FloorAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+142 
+143   glBindBuffer(GL\_ARRAY\_BUFFER, \hyperlink{classFloorAsset_a54863f3a9f4c2f484342359ac49ca419}{color\_buffer\_token});
+144   glVertexAttribPointer(
+145                         1,                             \textcolor{comment}{/* attribute */}
+146                         3,                             \textcolor{comment}{/* size */}
+147                         GL\_FLOAT,                      \textcolor{comment}{/* type */}
+148                         GL\_FALSE,                      \textcolor{comment}{/* normalized? */}
+149                         0,                             \textcolor{comment}{/* stride */}
+150                         (\textcolor{keywordtype}{void}*)0                       \textcolor{comment}{/* array buffer offset */}
+151                         );
+152 
+153   \hyperlink{FloorAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+154 
+155   glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, \hyperlink{classFloorAsset_ab9be3a61a423156c7e79c73cd1cd5fc4}{element\_buffer\_token});
+156   glDrawElements(
+157                  GL\_TRIANGLES,
+158                  \hyperlink{classFloorAsset_ad42145830ac04a31ca27fd290cf0ef08}{element\_buffer\_length},
+159                  GL\_UNSIGNED\_INT,
+160                  (GLvoid*) 0
+161                  );
+162 
+163   \hyperlink{FloorAsset_8cc_a75f201b0e53e68726854997957322b8d}{checkGLError}();
+164 
+165   glDisableVertexAttribArray(position\_attrib);
+166 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classFloorAsset_a5e4aa3ffef39690775a950c85fb08a2a}{}\index{Floor\+Asset@{Floor\+Asset}!color\+\_\+buffer\+\_\+length@{color\+\_\+buffer\+\_\+length}}
+\index{color\+\_\+buffer\+\_\+length@{color\+\_\+buffer\+\_\+length}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{color\+\_\+buffer\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Floor\+Asset\+::color\+\_\+buffer\+\_\+length\hspace{0.3cm}{\ttfamily [private]}}\label{classFloorAsset_a5e4aa3ffef39690775a950c85fb08a2a}
+\hypertarget{classFloorAsset_a54863f3a9f4c2f484342359ac49ca419}{}\index{Floor\+Asset@{Floor\+Asset}!color\+\_\+buffer\+\_\+token@{color\+\_\+buffer\+\_\+token}}
+\index{color\+\_\+buffer\+\_\+token@{color\+\_\+buffer\+\_\+token}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{color\+\_\+buffer\+\_\+token}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Floor\+Asset\+::color\+\_\+buffer\+\_\+token\hspace{0.3cm}{\ttfamily [private]}}\label{classFloorAsset_a54863f3a9f4c2f484342359ac49ca419}
+\hypertarget{classFloorAsset_ad42145830ac04a31ca27fd290cf0ef08}{}\index{Floor\+Asset@{Floor\+Asset}!element\+\_\+buffer\+\_\+length@{element\+\_\+buffer\+\_\+length}}
+\index{element\+\_\+buffer\+\_\+length@{element\+\_\+buffer\+\_\+length}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{element\+\_\+buffer\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Floor\+Asset\+::element\+\_\+buffer\+\_\+length\hspace{0.3cm}{\ttfamily [private]}}\label{classFloorAsset_ad42145830ac04a31ca27fd290cf0ef08}
+\hypertarget{classFloorAsset_ab9be3a61a423156c7e79c73cd1cd5fc4}{}\index{Floor\+Asset@{Floor\+Asset}!element\+\_\+buffer\+\_\+token@{element\+\_\+buffer\+\_\+token}}
+\index{element\+\_\+buffer\+\_\+token@{element\+\_\+buffer\+\_\+token}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{element\+\_\+buffer\+\_\+token}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Floor\+Asset\+::element\+\_\+buffer\+\_\+token\hspace{0.3cm}{\ttfamily [private]}}\label{classFloorAsset_ab9be3a61a423156c7e79c73cd1cd5fc4}
+\hypertarget{classFloorAsset_a9edf10bbcfbc61006fafb4a10d826a76}{}\index{Floor\+Asset@{Floor\+Asset}!vertex\+\_\+buffer\+\_\+length@{vertex\+\_\+buffer\+\_\+length}}
+\index{vertex\+\_\+buffer\+\_\+length@{vertex\+\_\+buffer\+\_\+length}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{vertex\+\_\+buffer\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Floor\+Asset\+::vertex\+\_\+buffer\+\_\+length\hspace{0.3cm}{\ttfamily [private]}}\label{classFloorAsset_a9edf10bbcfbc61006fafb4a10d826a76}
+\hypertarget{classFloorAsset_a5fdd868b2e2a52dabfe2387c903e3862}{}\index{Floor\+Asset@{Floor\+Asset}!vertex\+\_\+buffer\+\_\+token@{vertex\+\_\+buffer\+\_\+token}}
+\index{vertex\+\_\+buffer\+\_\+token@{vertex\+\_\+buffer\+\_\+token}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{vertex\+\_\+buffer\+\_\+token}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Floor\+Asset\+::vertex\+\_\+buffer\+\_\+token\hspace{0.3cm}{\ttfamily [private]}}\label{classFloorAsset_a5fdd868b2e2a52dabfe2387c903e3862}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{FloorAsset_8h}{Floor\+Asset.\+h}\item 
+src/\hyperlink{FloorAsset_8cc}{Floor\+Asset.\+cc}\end{DoxyCompactItemize}
