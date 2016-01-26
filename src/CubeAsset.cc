@@ -5,7 +5,7 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
 ///
 ///Cube Creation
 ///models coordinates, origin dependant on xyz variables.
-///vertex buffer models coordinates, for the triangles. 
+///vertex buffer models coordinates, for the triangles.
 ///colour buffer models the colour of the object triangles.
 ///element buffer creates the cube using 12 triangles.
 ///

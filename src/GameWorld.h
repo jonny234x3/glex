@@ -8,6 +8,7 @@
 #include "common.h"
 #include "GameAssetManager.h"
 #include "CubeAsset.h"
+#include "FloorAsset.h"
 #include "PyramidAsset.h"
 
 /**
