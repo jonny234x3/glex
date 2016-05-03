@@ -51,9 +51,8 @@ int plane[planeX][planeY] = {
 /// Spawns floor asset and a Cube asset
 ///
     else if( plane[Y][X] == 2){
-      asset_manager->AddAsset(make_shared<FloorAsset>((X)-(planeX/2.0f),-6.00f,(Z*Y)));
-      asset_manager->AddAsset(make_shared<CubeAsset>((X)-(planeX/2.0f),2.00f,(Z*Y)));
-
+      asset_manager->AddAsset(make_shared<FloorAsset>((X)-(planeX/2.0f),-6.00f,(Z*Y));
+      asset_manager->AddAsset(make_shared<CubeAsset>((X)-(planeX/2.0f),2.00f,(Z*Y));
     }
 ///
 /// Spawning Pyramids
