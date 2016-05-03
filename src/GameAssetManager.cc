@@ -21,6 +21,16 @@ GameAssetManager::GameAssetManager(ApplicationMode mode) {
   };
 
   program_token = CreateGLProgram(vertex_shader, fragment_shader);
+
+  projectionMatrix_link = glGetUniformLocation(program_token, "projectionMatrix");
+  translateMatrix_link = glGetUniformLocation(program_token, "translateMatrix");
+  viewMatrix_link = glGetUniformLocation(program_token, "viewMatrix");
+
+  projectionMatrix = glm::perspective(glm::radians(45.0f), (float) 640/(float)480, 0.1f, 1000.0f);
+}
+
+void GameAssetManager::UpdateCameraPosition(Input input_Direction, int mouseX, int mouseY){
+  viewMatrix = camera.UpdateCameraPosition(input_Direction, mouseX, mouseY);
 }
 
 /**
@@ -67,6 +77,9 @@ void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
  */
 void GameAssetManager::Draw() {
   for(auto ga: draw_list) {
+    glUniformMatrix4fv(projectionMatrix_link, 1, GL_FALSE, &projectionMatrix[0][0]);
+    glUniformMatrix4fv(viewMatrix_link, 1, GL_FALSE, &viewMatrix[0][0]);
+    glUniformMatrix4fv(translateMatrix_link, 1, GL_FALSE, &translateMatrix[0][0]);
     ga->Draw(program_token);
   }
 }
@@ -141,13 +154,13 @@ GLuint GameAssetManager::CreateGLESShader(GLenum type, std::string & shader) {
   return shader_token;
 }
 
-/**
- * ReadShader reads the contents of a file and packs it into a null termintated
- * GLchar * which is suitable for sending to OpenGL.
- *
- * @return a pair consisting of the shader file contents and a holder for the
- *         OpenGL "token".
- */
+///////////////////////////////////////////////////////////////////////////////
+/// ReadShader reads the contents of a file and packs it into a null termintated
+/// GLchar * which is suitable for sending to OpenGL.
+///
+/// @return a pair consisting of the shader file contents and a holder for the
+///         OpenGL "token".
+///////////////////////////////////////////////////////////////////////////////
 std::pair<GLchar *, GLint> GameAssetManager::ReadShader(std::string & shader) {
   std::ifstream input_file;
   GLint length;

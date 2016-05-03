@@ -1,7 +1,7 @@
-EXTRA_DIST = GameWorld.h GameAssetManager.h GameAsset.h CubeAsset.h FloorAsset.h PyramidAsset.h 
+EXTRA_DIST = GameWorld.h GameAssetManager.h GameAsset.h CubeAsset.h FloorAsset.h PyramidAsset.h Camera.h
 
 bin_PROGRAMS = shaderexample
-shaderexample_SOURCES = main.cc GameWorld.cc GameAssetManager.cc CubeAsset.cc FloorAsset.cc PyramidAsset.cc
+shaderexample_SOURCES = main.cc GameWorld.cc GameAssetManager.cc CubeAsset.cc FloorAsset.cc PyramidAsset.cc Camera.cc
 
 AM_CPPFLAGS = -DGL_GLEXT_PROTOTYPES -DGL3_PROTOTYPES
 AM_CPPFLAGS += -std=c++11
