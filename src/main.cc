@@ -144,13 +144,15 @@ int main(int argc, char ** argv) {
   auto window = InitWorld();
   auto game_world = std::make_shared<GameWorld>(mode);
 
+  if(!window) {
+    SDL_Quit();
+  }
+
   int mouseX;
   int mouseY;
   const Uint8 *keyboard_state;
   Input input_direction = NILL;
-  if(!window) {
-    SDL_Quit();
-  }
+  SDL_SetRelativeMouseMode(SDL_TRUE);
 
   // Call the function "tick" every delay milliseconds
   SDL_AddTimer(delay, tick, NULL);
@@ -174,9 +176,11 @@ int main(int argc, char ** argv) {
     	}else if(keyboard_state[SDL_SCANCODE_D]){
     	  input_direction = RIGHT;
     	}else if(keyboard_state[SDL_SCANCODE_W]){
-    	  input_direction = UP;
-        //}else if(keyboard_state[SDL_SCANCODE_SPACE]){
-        //  input_direction = ASCEND;
+    	  input_direction = FORWARD;
+        }else if(keyboard_state[SDL_SCANCODE_J]){
+          input_direction = ASCEND;
+        }else if(keyboard_state[SDL_SCANCODE_K]){
+          input_direction = DESCEND;
     	}else if(keyboard_state[SDL_SCANCODE_ESCAPE]){
     	  SDL_Quit();
     	}else{

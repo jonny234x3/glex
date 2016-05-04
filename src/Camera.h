@@ -28,7 +28,8 @@ private:
 	float mouseDeltaX;
 	float mouseDeltaY;
 
-	float cameraMovementSpeed;
+	float cameraMouseSpeed;
+        float cameraKeyboardSpeed;
 
 
 };

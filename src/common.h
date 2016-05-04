@@ -9,7 +9,8 @@
 /// 2. Rotate -- load the correct shader to rotate a simple asset.
 /// 3. Scale -- load the correct shader to scale a simple asset.
 ///
+
 enum ApplicationMode {TRANSFORM, ROTATE, SCALE};
-enum Input{ NILL , UP, DOWN, LEFT, RIGHT, ASCEND};
+enum Input{ NILL , FORWARD, DOWN, LEFT, RIGHT, ASCEND, DESCEND};
 
 #endif
