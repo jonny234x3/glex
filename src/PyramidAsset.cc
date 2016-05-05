@@ -1,6 +1,6 @@
 #include "PyramidAsset.h"
 
-PyramidAsset::PyramidAsset(GLfloat x, GLfloat y, GLfloat z) {
+PyramidAsset::PyramidAsset(glm::vec3 Spawn, glm::vec3 xyzPos/*GLfloat x, GLfloat y, GLfloat z*/) : GameAsset(Spawn, xyzPos) {
 
 //////////////////////////////////////////////////////////////////////////////////
 ///Pyramid Creation
@@ -11,11 +11,11 @@ PyramidAsset::PyramidAsset(GLfloat x, GLfloat y, GLfloat z) {
 //////////////////////////////////////////////////////////////////////////////////
 
   GLfloat vertex_buffer [] {
-      -0.5f + x,  0.0f + y, -0.5f + z   //0
-    , -0.5f + x,  0.0f + y,  0.5f + z   //1
-    ,  0.5f + x,  0.0f + y, -0.5f + z   //2
-    ,  0.5f + x,  0.0f + y,  0.5f + z   //3
-    ,  0.0f + x,  1.0f + y,  0.0f + z   //4
+      -0.5f + xyzPos.x,  0.0f + xyzPos.y, -0.5f + xyzPos.z   //0
+    , -0.5f + xyzPos.x,  0.0f + xyzPos.y,  0.5f + xyzPos.z   //1
+    ,  0.5f + xyzPos.x,  0.0f + xyzPos.y, -0.5f + xyzPos.z   //2
+    ,  0.5f + xyzPos.x,  0.0f + xyzPos.y,  0.5f + xyzPos.z   //3
+    ,  0.0f + xyzPos.x,  1.0f + xyzPos.y,  0.0f + xyzPos.z   //4
   };
   vertex_buffer_length = sizeof(vertex_buffer);
 
@@ -75,7 +75,7 @@ void PyramidAsset::checkError(std::string file, int line) {
 
 void PyramidAsset::Draw(GLuint program_token) {
   if(!glIsProgram(program_token)) {
-    std::cerr << "Drawing Pyramid with invalid program" << std::endl;
+    //std::cerr << "Drawing Pyramid with invalid program" << std::endl;
     return;
   }
   GLint validation_ok;

@@ -11,7 +11,7 @@
 
 class FloorAsset : public GameAsset {
  public:
-  FloorAsset(GLfloat x, GLfloat y, GLfloat z);
+  FloorAsset(glm::vec3 Spawn, glm::vec3 xyzPos/*GLfloat x, GLfloat y, GLfloat z*/);
   ~FloorAsset();
   virtual void Draw(GLuint);
 

@@ -43,7 +43,7 @@ int plane[planeX][planeY] = {
  for( X=0; X<planeX; X++){
    for (Y=0; Y<planeY; Y++){
     if( plane[Y][X] == 1){
-     asset_manager->AddAsset(make_shared<FloorAsset>((X), -1.0f, (Y*Z)));
+     asset_manager->AddAsset(make_shared<FloorAsset>(glm::vec3(0.0f,0.0f,0.0f), glm::vec3((X), -1.0f, (Y*Z))));
     }    
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -51,8 +51,8 @@ int plane[planeX][planeY] = {
 /// Spawns floor asset and a Cube asset
 //////////////////////////////////////////////////////////////////////////////////
     else if( plane[Y][X] == 2){
-      asset_manager->AddAsset(make_shared<CubeAsset>((X), 0.0f, (Y*Z)));
-      asset_manager->AddAsset(make_shared<FloorAsset>((X), -1.0f, (Y*Z)));
+      asset_manager->AddAsset(make_shared<CubeAsset>(glm::vec3(0.0f,0.0f,0.0f), glm::vec3((X), 0.0, (Y*Z))));
+      asset_manager->AddAsset(make_shared<FloorAsset>(glm::vec3(0.0f,0.0f,0.0f), glm::vec3((X), -1.0, (Y*Z))));
     }
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -60,8 +60,8 @@ int plane[planeX][planeY] = {
 /// Spawns floor asset and a Pyramid asset above it
 //////////////////////////////////////////////////////////////////////////////////
     else if( plane[Y][X] == 3){
-      asset_manager->AddAsset(make_shared<PyramidAsset>((X), -0.5f, (Y*Z)));
-      asset_manager->AddAsset(make_shared<FloorAsset>((X), -1.0f, (Y*Z)));
+      asset_manager->AddAsset(make_shared<PyramidAsset>(glm::vec3(0.0f,0.0f,0.0f),glm::vec3((X), -0.5, (Y*Z))));
+      asset_manager->AddAsset(make_shared<FloorAsset>(glm::vec3(0.0f,0.0f,0.0f),glm::vec3((X), -1.0, (Y*Z))));
     }
   }
  }

@@ -2,7 +2,6 @@
 #define GAMEWORLD_H
 
 #include <memory>
-
 #include <GL/gl.h>
 
 #include "common.h"
@@ -10,6 +9,8 @@
 #include "CubeAsset.h"
 #include "FloorAsset.h"
 #include "PyramidAsset.h"
+
+using namespace std;
 
 //////////////////////////////////////////////////////////////////////////////////
 ///GameWorld allows us to separate the management of the game world from the
