@@ -12,12 +12,13 @@
 #include "common.h"
 #include "GameWorld.h"
 
-/*
- * SDL timers run in separate threads.  In the timer thread
- * push an event onto the event queue.  This event signifies
- * to call display() from the thread in which the OpenGL 
- * context was created.
- */
+//////////////////////////////////////////////////////////////////////////////////
+/// SDL timers run in separate threads.  In the timer thread
+/// push an event onto the event queue.  This event signifies
+/// to call display() from the thread in which the OpenGL 
+/// context was created.
+//////////////////////////////////////////////////////////////////////////////////
+
 Uint32 tick(Uint32 interval, void *param) {
   SDL_Event event;
   event.type = SDL_USEREVENT;
@@ -87,9 +88,11 @@ std::shared_ptr<SDL_Window> InitWorld() {
     return nullptr;
   }
 
-  // Initialise GLEW - an easy way to ensure OpenGl 3.0+
-  // The *must* be done after we have set the video mode - otherwise we have no
-  // OpenGL context to test.
+//////////////////////////////////////////////////////////////////////////////////
+/// Initialise GLEW - an easy way to ensure OpenGl 3.0+
+/// The *must* be done after we have set the video mode - otherwise we have no
+/// OpenGL context to test.
+//////////////////////////////////////////////////////////////////////////////////
   glewInit();
   if (!glewIsSupported("GL_VERSION_3_0")) {
     std::cerr << "OpenGL 3.0 not available" << std::endl;
@@ -166,6 +169,14 @@ int main(int argc, char ** argv) {
       break;
     case SDL_USEREVENT:
     {
+      //////////////////////////////////////////////////////////////////////////////////
+      /// Inputs
+      /// SDL Inputs for Mouse working on the x and y.
+      /// SDL keyboard Inputs which are later sent to the Camera Class.
+      /// Keyboard uses "W,A,S,D" formation over arrows keys.
+      /// Whilst J,K are used for Ascend and Descend
+      //////////////////////////////////////////////////////////////////////////////////
+
       SDL_GetRelativeMouseState(&mouseX, &mouseY);
 
       keyboard_state = SDL_GetKeyboardState(NULL);
@@ -191,9 +202,9 @@ int main(int argc, char ** argv) {
       Draw(window, game_world);
 
       break;
-    default:
+      default:
       break;
     }
+   }
   }
-}
 }

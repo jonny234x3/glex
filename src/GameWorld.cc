@@ -12,9 +12,9 @@ GameWorld::GameWorld (ApplicationMode mode) : asset_manager (make_shared<GameAss
 /// 3 - Floor piece and pyramid
 //////////////////////////////////////////////////////////////////////////////////
 
-int X,Y; //point A,B
+int X,Y;
 int Z = 1;
-int planeX = 12;  //worldspace
+int planeX = 12;
 int planeY = 12;
 
 int plane[planeX][planeY] = {
@@ -39,10 +39,6 @@ int plane[planeX][planeY] = {
 /// Y is a constant as the floor is one flat plane
 /// Z is determined by the Y value
 //////////////////////////////////////////////////////////////////////////////////
-  /// We can use the above array as coordinate points, [1][3] would be
-  /// coordinates x1 y3. In this way we can generate a 3D world using
-  /// numbers to represent objects.
-  ///////////////////////////////////////////////////////////////////
 
  for( X=0; X<planeX; X++){
    for (Y=0; Y<planeY; Y++){
@@ -58,6 +54,7 @@ int plane[planeX][planeY] = {
       asset_manager->AddAsset(make_shared<CubeAsset>((X), 0.0f, (Y*Z)));
       asset_manager->AddAsset(make_shared<FloorAsset>((X), -1.0f, (Y*Z)));
     }
+
 //////////////////////////////////////////////////////////////////////////////////
 /// Spawning Pyramids
 /// Spawns floor asset and a Pyramid asset above it

@@ -2,13 +2,13 @@
 
 PyramidAsset::PyramidAsset(GLfloat x, GLfloat y, GLfloat z) {
 
-///
+//////////////////////////////////////////////////////////////////////////////////
 ///Pyramid Creation
 ///models coordinates, origin dependant on xyz variables.
 ///vertex buffer models coordinates, for the triangles. 
 ///colour buffer models the colour of the object triangles.
 ///element buffer creates the cube using 6 triangles.
-///
+//////////////////////////////////////////////////////////////////////////////////
 
   GLfloat vertex_buffer [] {
       -0.5f + x,  0.0f + y, -0.5f + z   //0
@@ -38,7 +38,6 @@ PyramidAsset::PyramidAsset(GLfloat x, GLfloat y, GLfloat z) {
   };
   element_buffer_length = sizeof(element_buffer);
   // Transfer buffers to the GPU
-  //
 
   // create vertex buffer
   glGenBuffers(1, &vertex_buffer_token);
@@ -63,7 +62,6 @@ PyramidAsset::~PyramidAsset() {
 #ifdef DEBUG
 #define checkGLError() checkError(__FILE__, __LINE__)
 #else
-// define symbol to be nothing
 #define checkGLError()
 #endif
 
@@ -103,9 +101,11 @@ void PyramidAsset::Draw(GLuint program_token) {
 
   glUseProgram(program_token);
   checkGLError();
-
-  // use the previously transferred buffer as the vertex array.  This way
-  // we transfer the buffer once -- at construction -- not on every frame.
+  
+  //////////////////////////////////////////////////////////////////////////////////
+  /// use the previously transferred buffer as the vertex array.  This way
+  /// we transfer the buffer once -- at construction -- not on every frame.
+  //////////////////////////////////////////////////////////////////////////////////
   glEnableVertexAttribArray(0);
 
   glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_token);
@@ -121,9 +121,9 @@ void PyramidAsset::Draw(GLuint program_token) {
 
   checkGLError();
 
-  ///
+  //////////////////////////////////////////////////////////////////////////////////
   /// repeated buffer array for color buffer
-  ///
+  //////////////////////////////////////////////////////////////////////////////////
   glBindBuffer(GL_ARRAY_BUFFER, color_buffer_token);
   glVertexAttribPointer(
                         1,                             /* attribute */
