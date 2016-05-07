@@ -1,6 +1,7 @@
 language: cpp
 compiler:
  - gcc
+ - clang
  - g++
 before_install:
  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then echo "yes" |sudo apt-add-repository ppa:zoogie/sdl2-snapshots; fi
