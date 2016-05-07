@@ -13,5 +13,10 @@ script:
  - autoreconf -i
  - ./configure
  - make
+
+notifications:
+  slack:
+    on_success: never
+    on_failure: never
 os:
  - linux
