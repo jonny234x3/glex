@@ -1,6 +1,7 @@
 #include "PyramidAsset.h"
 
-PyramidAsset::PyramidAsset(glm::vec3 Spawn, glm::vec3 xyzPos) : GameAsset(Spawn, xyzPos) {
+PyramidAsset::PyramidAsset(glm::vec3 Spawn, glm::vec3 xyzPos, glm::vec3 xyzTranslation, bool xyzTbool) 
+: GameAsset(Spawn, xyzPos, xyzTranslation, xyzTbool) {
 
 //////////////////////////////////////////////////////////////////////////////////
 ///Pyramid Creation

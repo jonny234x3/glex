@@ -10,7 +10,7 @@ using namespace std;
 class GameAsset {
         public:
 
-        GameAsset(glm::vec3 Spawn, glm::vec3 xyzPos/*GLfloat positionX, GLfloat positionY, GLfloat positionZ*/);
+        GameAsset(glm::vec3 Spawn, glm::vec3 xyzPos, glm::vec3 xyzTranslation, bool xyzTbool);
         glm::mat4 GetModel();
 
         virtual void Draw(GLuint) = 0;

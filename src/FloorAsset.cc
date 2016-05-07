@@ -1,6 +1,7 @@
 #include "FloorAsset.h"
 
-FloorAsset::FloorAsset(glm::vec3 Spawn, glm::vec3 xyzPos): GameAsset(Spawn, xyzPos) {
+FloorAsset::FloorAsset(glm::vec3 Spawn, glm::vec3 xyzPos, glm::vec3 xyzTranslation, bool xyzTbool) 
+: GameAsset(Spawn, xyzPos, xyzTranslation, xyzTbool) {
 
 //////////////////////////////////////////////////////////////////////////////////
 ///Cube Creation

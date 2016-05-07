@@ -6,14 +6,14 @@
 /// Class to create the Bounding Box and Manipulate the Asset
 ////////////////////////////////////////////////////////////////////////////////////////// 
 
-GameAsset::GameAsset(glm::vec3 Spawn, glm::vec3 xyzPos/*GLfloat positionX, GLfloat positionY, GLfloat positionZ*/) {
+GameAsset::GameAsset(glm::vec3 Spawn, glm::vec3 xyzPos, glm::vec3 xyzTranslation, bool xyzTbool) {
 
-Bounding_Box = std::make_shared<BoundingBox>(Spawn, xyzPos/*positionX, positionY, positionZ*/); // Rename Bounding_Box
+Bounding_Box = std::make_shared<BoundingBox>(Spawn, xyzPos, xyzTranslation, xyzTbool); // Rename Bounding_Box
 
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
-///*CHANGE ME* Get Mode
+///*CHANGE ME* Get Model
 ///This class Gets the Model from the Bounding Box class, This method is normally called
 ///by the Draw method in GameAssetManager
 ////////////////////////////////////////////////////////////////////////////////////////// 
