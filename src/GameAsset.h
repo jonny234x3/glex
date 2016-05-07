@@ -2,14 +2,13 @@
 #define GAMEASSET_H
 
 #include <iostream>
-<<<<<<< HEAD
+
 #include <GL/gl.h>
-=======
+
 
 #include "BoundingBox.h"
 
 using namespace std;
->>>>>>> boundingbox
 
 class GameAsset {
         public:
