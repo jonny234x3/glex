@@ -82,14 +82,6 @@ CubeAsset::~CubeAsset() {
 #define checkGLError()
 #endif
 
-void CubeAsset::checkError(std::string file, int line) {
-  GLenum gl_error = glGetError();
-  if(GL_NO_ERROR != gl_error) {
-    std::cerr << "GL error in " << file << " at line " << line << " error: " << gl_error << std::endl;
-    exit(-1);
-  }
-}
-
 void CubeAsset::Draw(GLuint program_token) {
   if(!glIsProgram(program_token)) {
     //std::cerr << "Drawing Cube with invalid program" << std::endl;

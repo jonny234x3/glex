@@ -184,7 +184,7 @@ GameAssetManager::GameAssetManager(GameAssetManager const&& the_manager) {
 /// Unimplemented assisgnment operator -- violates the expected semantics for
 /// assignment in C++11.
 //////////////////////////////////////////////////////////////////////////////////
-void GameAssetManager::operator=(GameAssetManager const& the_manager) {
+void GameAssetManager::operator=(GameAssetManager) {
   // TODO: implement this
 }
 

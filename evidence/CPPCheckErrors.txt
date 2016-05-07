@@ -1,0 +1,12 @@
+[src/Camera.cc:11]: (warning) Member variable 'Camera::cameraPositionX' is not initialized in the constructor.
+[src/Camera.cc:11]: (warning) Member variable 'Camera::cameraPositionY' is not initialized in the constructor.
+[src/Camera.cc:11]: (warning) Member variable 'Camera::cameraPositionZ' is not initialized in the constructor.
+[src/CubeAsset.h:21]: (style) Unused private function: 'CubeAsset::checkError'
+[src/FloorAsset.h:21]: (style) Unused private function: 'FloorAsset::checkError'
+[src/GameAsset.cc:11]: (performance) Variable 'Bounding_Box' is assigned in constructor body. Consider performing initialization in initialization list.
+[src/GameAssetManager.h:30]: (style) 'GameAssetManager::operator=' should return 'GameAssetManager &'.
+[src/GameWorld.h:29]: (style) Class 'GameWorld' has a constructor with 1 argument that is not explicit.
+[src/PyramidAsset.h:21]: (style) Unused private function: 'PyramidAsset::checkError'
+[src/main.cc:38]: (performance) Function parameter 'window' should be passed by reference.
+[src/main.cc:38]: (performance) Function parameter 'game_world' should be passed by reference.
+(information) Cppcheck cannot find all the include files (use --check-config for details)

@@ -18,7 +18,6 @@ class FloorAsset : public GameAsset {
   private:
   GLuint element_buffer_length, color_buffer_length, vertex_buffer_length;
   GLuint vertex_buffer_token, color_buffer_token, element_buffer_token;
-  void checkError(std::string file, int line);
 };
 
 #endif // FloorASSET_H

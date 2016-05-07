@@ -12,9 +12,6 @@ public:
 
 private:
 
-	float cameraPositionX;
-	float cameraPositionY;
-	float cameraPositionZ;
 	glm::vec3 cameraPosition;
 
 	glm::vec3 direction;
