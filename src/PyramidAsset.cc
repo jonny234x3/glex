@@ -1,6 +1,6 @@
 #include "PyramidAsset.h"
 
-PyramidAsset::PyramidAsset(glm::vec3 Spawn, glm::vec3 xyzPos/*GLfloat x, GLfloat y, GLfloat z*/) : GameAsset(Spawn, xyzPos) {
+PyramidAsset::PyramidAsset(glm::vec3 Spawn, glm::vec3 xyzPos) : GameAsset(Spawn, xyzPos) {
 
 //////////////////////////////////////////////////////////////////////////////////
 ///Pyramid Creation
@@ -11,11 +11,11 @@ PyramidAsset::PyramidAsset(glm::vec3 Spawn, glm::vec3 xyzPos/*GLfloat x, GLfloat
 //////////////////////////////////////////////////////////////////////////////////
 
   GLfloat vertex_buffer [] {
-      -0.5f + xyzPos.x,  0.0f + xyzPos.y, -0.5f + xyzPos.z   //0
-    , -0.5f + xyzPos.x,  0.0f + xyzPos.y,  0.5f + xyzPos.z   //1
-    ,  0.5f + xyzPos.x,  0.0f + xyzPos.y, -0.5f + xyzPos.z   //2
-    ,  0.5f + xyzPos.x,  0.0f + xyzPos.y,  0.5f + xyzPos.z   //3
-    ,  0.0f + xyzPos.x,  1.0f + xyzPos.y,  0.0f + xyzPos.z   //4
+      -0.5f + Spawn.x,  0.0f + Spawn.y, -0.5f + Spawn.z   //0
+    , -0.5f + Spawn.x,  0.0f + Spawn.y,  0.5f + Spawn.z   //1
+    ,  0.5f + Spawn.x,  0.0f + Spawn.y, -0.5f + Spawn.z   //2
+    ,  0.5f + Spawn.x,  0.0f + Spawn.y,  0.5f + Spawn.z   //3
+    ,  0.0f + Spawn.x,  1.0f + Spawn.y,  0.0f + Spawn.z   //4
   };
   vertex_buffer_length = sizeof(vertex_buffer);
 

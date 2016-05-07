@@ -51,7 +51,7 @@ glm::mat4 Camera::UpdateCameraPosition(Input input_Direction, int mouseX, int mo
     ///////////////////////////////////////////////////////////////////////////////
 
     direction = glm::vec3(cos(verticalAngle) * sin(horizontalAngle),
-                          sin(verticalAngle),
+                          0,
                           cos(verticalAngle) * cos(horizontalAngle));
 
     right = glm::vec3(sin(horizontalAngle - 3.14/2.0f),0,cos(horizontalAngle - 3.14/2.0f));

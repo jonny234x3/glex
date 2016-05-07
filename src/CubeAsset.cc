@@ -1,6 +1,6 @@
 #include "CubeAsset.h"
 
-CubeAsset::CubeAsset(glm::vec3 Spawn, glm::vec3 xyzPos/*GLfloat x, GLfloat y, GLfloat z*/) : GameAsset(Spawn, xyzPos/*x, y, z*/) {
+CubeAsset::CubeAsset(glm::vec3 Spawn, glm::vec3 xyzPos) : GameAsset(Spawn, xyzPos) {
 
 //////////////////////////////////////////////////////////////////////////////////
 ///Cube Creation
@@ -11,14 +11,14 @@ CubeAsset::CubeAsset(glm::vec3 Spawn, glm::vec3 xyzPos/*GLfloat x, GLfloat y, GL
 //////////////////////////////////////////////////////////////////////////////////
 
   GLfloat vertex_buffer [] {
-      -0.5f + xyzPos.x, -0.5f + xyzPos.y, -0.5f + xyzPos.z   //0
-    , -0.5f + xyzPos.x,  0.5f + xyzPos.y, -0.5f + xyzPos.z  //1
-    ,  0.5f + xyzPos.x, -0.5f + xyzPos.y, -0.5f + xyzPos.z   //2
-    ,  0.5f + xyzPos.x,  0.5f + xyzPos.y, -0.5f + xyzPos.z   //3
-    , -0.5f + xyzPos.x, -0.5f + xyzPos.y,  0.5f + xyzPos.z   //5
-    , -0.5f + xyzPos.x,  0.5f + xyzPos.y,  0.5f + xyzPos.z   //4
-    ,  0.5f + xyzPos.x, -0.5f + xyzPos.y,  0.5f + xyzPos.z   //6
-    ,  0.5f + xyzPos.x,  0.5f + xyzPos.y,  0.5f + xyzPos.z   //7
+      -0.5f + Spawn.x, -0.5f + Spawn.y, -0.5f + Spawn.z   //0
+    , -0.5f + Spawn.x,  0.5f + Spawn.y, -0.5f + Spawn.z   //1
+    ,  0.5f + Spawn.x, -0.5f + Spawn.y, -0.5f + Spawn.z   //2
+    ,  0.5f + Spawn.x,  0.5f + Spawn.y, -0.5f + Spawn.z   //3
+    , -0.5f + Spawn.x, -0.5f + Spawn.y,  0.5f + Spawn.z   //5
+    , -0.5f + Spawn.x,  0.5f + Spawn.y,  0.5f + Spawn.z   //4
+    ,  0.5f + Spawn.x, -0.5f + Spawn.y,  0.5f + Spawn.z   //6
+    ,  0.5f + Spawn.x,  0.5f + Spawn.y,  0.5f + Spawn.z   //7
   };
   vertex_buffer_length = sizeof(vertex_buffer);
 

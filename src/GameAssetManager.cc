@@ -22,12 +22,6 @@ GameAssetManager::GameAssetManager(ApplicationMode mode) {
   };
 
   program_token = CreateGLProgram(vertex_shader, fragment_shader);
-
-  //projectionMatrix_link = glGetUniformLocation(program_token, "projectionMatrix");
-  //translateMatrix_link = glGetUniformLocation(program_token, "translateMatrix");
-  //viewMatrix_link = glGetUniformLocation(program_token, "viewMatrix");
-
-  projectionMatrix = glm::perspective(glm::radians(45.0f), (float) 640/(float)480, 0.1f, 1000.0f);
 }
 
 void GameAssetManager::UpdateCameraPosition(Input input_Direction, int mouseX, int mouseY){
@@ -59,9 +53,11 @@ void GameAssetManager::Draw() {
 
     glm::mat4 Camera_Translate(1.0f);
 
-      projectionMatrix_link = glGetUniformLocation(program_token, "projectionMatrix");
-        translateMatrix_link = glGetUniformLocation(program_token, "translateMatrix");
-  viewMatrix_link = glGetUniformLocation(program_token, "viewMatrix");
+    projectionMatrix_link = glGetUniformLocation(program_token, "projectionMatrix");
+    translateMatrix_link = glGetUniformLocation(program_token, "translateMatrix");
+    viewMatrix_link = glGetUniformLocation(program_token, "viewMatrix");
+
+    projectionMatrix = glm::perspective(glm::radians(45.0f), (float) 640/(float)480, 0.1f, 1000.0f);
 
     glUniformMatrix4fv(projectionMatrix_link, 1, GL_FALSE, &projectionMatrix[0][0]);
     glUniformMatrix4fv(viewMatrix_link, 1, GL_FALSE, &viewMatrix[0][0]);
