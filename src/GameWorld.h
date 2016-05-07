@@ -36,6 +36,7 @@ class GameWorld {
   void UpdateCameraPosition(Input, int mouseX, int mouseY);
 
  private:
+  glm::vec3 Spawn = glm::vec3(0.0f,0.0f,0.0f);
   std::shared_ptr<GameAssetManager> asset_manager;
 };
 #endif // GAMEWORLD_H

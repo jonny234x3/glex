@@ -36,7 +36,7 @@ glm::mat4 BoundingBox::GetModel() {
 ////////////////////////////////////////////////////////////////////////////////////////// 
 void BoundingBox::Translate() {
 	if(this->xyzPos.y < xyzTranslation.y ) {  // translates the y
-                this->xyzPos = this->xyzPos + glm::vec3(0.0f,0.1f,0.0f);  // speed
+                this->xyzPos = this->xyzPos + glm::vec3(0.0f,0.05f,0.0f);  // speed
 	}else{
                 this->xyzPos = SavexyzPos;
 	}

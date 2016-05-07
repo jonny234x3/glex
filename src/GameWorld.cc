@@ -46,7 +46,7 @@ int plane[planeX][planeY] = {
  for( X=0; X<planeX; X++){
    for (Y=0; Y<planeY; Y++){
     if( plane[Y][X] == 1){
-     asset_manager->AddAsset(make_shared<FloorAsset>(glm::vec3(0.0f,0.0f,0.0f), 
+     asset_manager->AddAsset(make_shared<FloorAsset>(Spawn, 
                                                      glm::vec3((X), -1.0f, (Y*Z)),
                                                      glm::vec3(0.0f,0.0f,0.0f), 
                                                      false ));
@@ -57,11 +57,11 @@ int plane[planeX][planeY] = {
 /// Spawns floor asset and a Cube asset
 //////////////////////////////////////////////////////////////////////////////////
     else if( plane[Y][X] == 2){
-      asset_manager->AddAsset(make_shared<CubeAsset>(glm::vec3(0.0f,0.0f,0.0f),
+      asset_manager->AddAsset(make_shared<CubeAsset>(Spawn,
                                                      glm::vec3((X), 0.0f, (Y*Z)),
                                                      glm::vec3(0.0f,0.0f,0.0f), 
                                                      false ));
-      asset_manager->AddAsset(make_shared<FloorAsset>(glm::vec3(0.0f,0.0f,0.0f), 
+      asset_manager->AddAsset(make_shared<FloorAsset>(Spawn, 
                                                       glm::vec3((X), -1.0, (Y*Z)),
                                                       glm::vec3(0.0f,0.0f,0.0f), 
                                                       false ));
@@ -73,11 +73,11 @@ int plane[planeX][planeY] = {
 /// Spawns floor asset and a Pyramid asset above it
 //////////////////////////////////////////////////////////////////////////////////
     else if( plane[Y][X] == 3){
-      asset_manager->AddAsset(make_shared<PyramidAsset>(glm::vec3(0.0f,0.0f,0.0f),
+      asset_manager->AddAsset(make_shared<PyramidAsset>(Spawn,
                                                         glm::vec3((X), -0.5, (Y*Z)),
-                                                        glm::vec3(0.0f,9.5f,0.0f), 
+                                                        glm::vec3(0.0f,2.5f,0.0f), 
                                                         true ));
-      asset_manager->AddAsset(make_shared<FloorAsset>(glm::vec3(0.0f,0.0f,0.0f),
+      asset_manager->AddAsset(make_shared<FloorAsset>(Spawn,
                                                       glm::vec3((X), -1.0, (Y*Z)),
                                                       glm::vec3(0.0f,0.0f,0.0f), 
                                                       false ));
