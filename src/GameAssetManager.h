@@ -53,7 +53,6 @@ class GameAssetManager {
   glm::mat4 projectionMatrix;
 
   GLuint cameraPositionX;
-
   GLuint cameraPositionZ;
 };
 
