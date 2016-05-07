@@ -1,5 +1,4 @@
 #include "GameWorld.h"
-#include "common.h"
 
 using namespace std;
 GameWorld::GameWorld (ApplicationMode mode) : asset_manager (make_shared<GameAssetManager>(mode)){

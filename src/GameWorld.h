@@ -6,6 +6,7 @@
 
 #include "common.h"
 #include "GameAssetManager.h"
+#include "GameAsset.h"
 #include "CubeAsset.h"
 #include "FloorAsset.h"
 #include "PyramidAsset.h"
