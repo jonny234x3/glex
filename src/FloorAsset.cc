@@ -1,6 +1,7 @@
 #include "FloorAsset.h"
 
-FloorAsset::FloorAsset(GLfloat x, GLfloat y, GLfloat z) {
+FloorAsset::FloorAsset(glm::vec3 Spawn, glm::vec3 xyzPos, glm::vec3 xyzTranslation, bool xyzTbool) 
+: GameAsset(Spawn, xyzPos, xyzTranslation, xyzTbool) {
 
 //////////////////////////////////////////////////////////////////////////////////
 ///Cube Creation
@@ -12,14 +13,14 @@ FloorAsset::FloorAsset(GLfloat x, GLfloat y, GLfloat z) {
 //////////////////////////////////////////////////////////////////////////////////
 
   GLfloat vertex_buffer [] {
-      -0.5f + x, -0.5f + y, -0.5f + z   //0
-    , -0.5f + x,  0.5f + y, -0.5f + z   //1
-    ,  0.5f + x, -0.5f + y, -0.5f + z   //2
-    ,  0.5f + x,  0.5f + y, -0.5f + z   //3
-    , -0.5f + x, -0.5f + y,  0.5f + z   //5
-    , -0.5f + x,  0.5f + y,  0.5f + z   //4
-    ,  0.5f + x, -0.5f + y,  0.5f + z   //6
-    ,  0.5f + x,  0.5f + y,  0.5f + z   //7
+      -0.5f + Spawn.x, -0.5f + Spawn.y, -0.5f + Spawn.z   //0
+    , -0.5f + Spawn.x,  0.5f + Spawn.y, -0.5f + Spawn.z   //1
+    ,  0.5f + Spawn.x, -0.5f + Spawn.y, -0.5f + Spawn.z   //2
+    ,  0.5f + Spawn.x,  0.5f + Spawn.y, -0.5f + Spawn.z   //3
+    , -0.5f + Spawn.x, -0.5f + Spawn.y,  0.5f + Spawn.z   //5
+    , -0.5f + Spawn.x,  0.5f + Spawn.y,  0.5f + Spawn.z   //4
+    ,  0.5f + Spawn.x, -0.5f + Spawn.y,  0.5f + Spawn.z   //6
+    ,  0.5f + Spawn.x,  0.5f + Spawn.y,  0.5f + Spawn.z   //7
   };
   vertex_buffer_length = sizeof(vertex_buffer);
 
@@ -92,7 +93,7 @@ void FloorAsset::checkError(std::string file, int line) {
 
 void FloorAsset::Draw(GLuint program_token) {
   if(!glIsProgram(program_token)) {
-    std::cerr << "Drawing Floor with invalid program" << std::endl;
+    //std::cerr << "Drawing Floor with invalid program" << std::endl;
     return;
   }
   GLint validation_ok;

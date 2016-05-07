@@ -11,7 +11,7 @@
 
 class PyramidAsset : public GameAsset {
  public:
-  PyramidAsset(GLfloat x, GLfloat y, GLfloat z);
+  PyramidAsset(glm::vec3 Spawn, glm::vec3 xyzPos, glm::vec3 xyzTranslation, bool xyzTbool);
   ~PyramidAsset();
   virtual void Draw(GLuint);
 
