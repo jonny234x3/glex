@@ -1,7 +1,7 @@
 #include "GameWorld.h"
 
 using namespace std;
-GameWorld::GameWorld (ApplicationMode mode) : asset_manager (make_shared<GameAssetManager>(mode)){
+GameWorld::GameWorld () : asset_manager (make_shared<GameAssetManager>()){
 
 //////////////////////////////////////////////////////////////////////////////////
 /// Cube spawning with Array

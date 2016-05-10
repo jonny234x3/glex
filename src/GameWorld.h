@@ -21,13 +21,7 @@ using namespace std;
 class GameWorld {
  public:
 
-//////////////////////////////////////////////////////////////////////////////////
-///We thread the ApplicationMode through the GameWorld ss we want to read it
-///in from the user.  Threading the state through the various function calls
-///is preferable (in this case) to having some kind of global state.
-//////////////////////////////////////////////////////////////////////////////////
-
- explicit GameWorld(ApplicationMode);
+ explicit GameWorld();
 
 //////////////////////////////////////////////////////////////////////////////////
 ///"Draw()" will draw the entire world.
@@ -39,5 +33,6 @@ class GameWorld {
  private:
   glm::vec3 Spawn = glm::vec3(0.0f,0.0f,0.0f);
   std::shared_ptr<GameAssetManager> asset_manager;
+  int plane;
 };
 #endif // GAMEWORLD_H
