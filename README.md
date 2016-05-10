@@ -38,3 +38,20 @@ See
 > $ ./src/shaderexample --help
 
 for usage instructions.
+
+# Building: Python #
+
+Ensure you have run the previous Build and Run commands first.
+
+``` bash
+$ cd src/
+$ export PYTHONPATH=`pwd`/.libs/
+$ cd .. 
+$ make
+``` 
+
+# Running: Python #
+
+In the glex directory use:
+
+> $ python src/PythonBind.py

@@ -1,4 +1,4 @@
 import liblink
-print liblink.greet()
+print liblink.hello()
 
 print("Good Bye")
