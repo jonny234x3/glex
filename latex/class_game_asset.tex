@@ -1,0 +1,65 @@
+\hypertarget{class_game_asset}{}\section{Game\+Asset Class Reference}
+\label{class_game_asset}\index{Game\+Asset@{Game\+Asset}}
+
+
+{\ttfamily \#include $<$Game\+Asset.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_game_asset__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_game_asset_a528ae8efd37541dc4c5a2ad643807e51}{Game\+Asset} (glm\+::vec3 Spawn, glm\+::vec3 xyz\+Pos, glm\+::vec3 xyz\+Translation, bool xyz\+Tbool)
+\item 
+glm\+::mat4 \hyperlink{class_game_asset_a50a4795382fb55c7513314f82821e444}{Get\+Model} ()
+\item 
+virtual void \hyperlink{class_game_asset_a961aa51ca0a9961fc584c0b5d5431300}{Draw} (G\+Luint)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_game_asset_a528ae8efd37541dc4c5a2ad643807e51}{}\index{Game\+Asset@{Game\+Asset}!Game\+Asset@{Game\+Asset}}
+\index{Game\+Asset@{Game\+Asset}!Game\+Asset@{Game\+Asset}}
+\subsubsection[{Game\+Asset(glm\+::vec3 Spawn, glm\+::vec3 xyz\+Pos, glm\+::vec3 xyz\+Translation, bool xyz\+Tbool)}]{\setlength{\rightskip}{0pt plus 5cm}Game\+Asset\+::\+Game\+Asset (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3}]{Spawn, }
+\item[{glm\+::vec3}]{xyz\+Pos, }
+\item[{glm\+::vec3}]{xyz\+Translation, }
+\item[{bool}]{xyz\+Tbool}
+\end{DoxyParamCaption}
+)}\label{class_game_asset_a528ae8efd37541dc4c5a2ad643807e51}
+{\itshape C\+H\+A\+N\+G\+E M\+E} Send Data To Bounding Box This Method Sends all the Data from spawning the Asset and sends it to the Bounding Box Class to create the Bounding Box and Manipulate the Asset 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_game_asset_a961aa51ca0a9961fc584c0b5d5431300}{}\index{Game\+Asset@{Game\+Asset}!Draw@{Draw}}
+\index{Draw@{Draw}!Game\+Asset@{Game\+Asset}}
+\subsubsection[{Draw(\+G\+Luint)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Game\+Asset\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_game_asset_a961aa51ca0a9961fc584c0b5d5431300}
+
+
+Implemented in \hyperlink{class_cube_asset_a1af568486056e254ffcf98fd99947bfe}{Cube\+Asset}, \hyperlink{class_floor_asset_a14650eb2c2cd75e990c351bad8636279}{Floor\+Asset}, and \hyperlink{class_pyramid_asset_aaea45da4956d79ec9ab96e9d0ccef3fe}{Pyramid\+Asset}.
+
+\hypertarget{class_game_asset_a50a4795382fb55c7513314f82821e444}{}\index{Game\+Asset@{Game\+Asset}!Get\+Model@{Get\+Model}}
+\index{Get\+Model@{Get\+Model}!Game\+Asset@{Game\+Asset}}
+\subsubsection[{Get\+Model()}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Game\+Asset\+::\+Get\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_game_asset_a50a4795382fb55c7513314f82821e444}
+{\itshape C\+H\+A\+N\+G\+E M\+E} Get Model This class Gets the Model from the Bounding Box class, This method is normally called by the Draw method in \hyperlink{class_game_asset_manager}{Game\+Asset\+Manager} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_game_asset_8h}{Game\+Asset.\+h}\item 
+src/\hyperlink{_game_asset_8cc}{Game\+Asset.\+cc}\end{DoxyCompactItemize}

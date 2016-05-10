@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structSDLWindowDeleter.html" title="SDLWindowDeleter" alt="" coords="5,5,143,32"/>
+<area shape="rect" id="node1" href="$class_game_asset.html" title="GameAsset" alt="" coords="5,56,96,83"/>
+<area shape="rect" id="node2" href="$class_cube_asset.html" title="CubeAsset" alt="" coords="153,5,239,32"/>
+<area shape="rect" id="node3" href="$class_floor_asset.html" title="FloorAsset" alt="" coords="153,56,239,83"/>
+<area shape="rect" id="node4" href="$class_pyramid_asset.html" title="PyramidAsset" alt="" coords="144,107,248,133"/>
 </map>

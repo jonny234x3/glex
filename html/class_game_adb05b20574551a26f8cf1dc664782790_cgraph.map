@@ -1,0 +1,5 @@
+<map id="Game::Start" name="Game::Start">
+<area shape="rect" id="node2" href="$class_game.html#aa12ca9a4e954b358cc4cdaf059c4485e" title="Game::InitWorld" alt="" coords="147,5,264,32"/>
+<area shape="rect" id="node3" href="$_game_8cc.html#a70eaa727262f633037c3f4b7d3ff24c2" title="tick" alt="" coords="184,56,227,83"/>
+<area shape="rect" id="node4" href="$class_game.html#aafad890eae2f5627f55fffc0b6e12b58" title="Game::Draw" alt="" coords="157,107,253,133"/>
+</map>

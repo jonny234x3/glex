@@ -1,0 +1,77 @@
+\hypertarget{class_pyramid_asset}{}\section{Pyramid\+Asset Class Reference}
+\label{class_pyramid_asset}\index{Pyramid\+Asset@{Pyramid\+Asset}}
+
+
+{\ttfamily \#include $<$Pyramid\+Asset.\+h$>$}
+
+
+
+Inheritance diagram for Pyramid\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_pyramid_asset__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pyramid\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_pyramid_asset__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pyramid_asset_a5588f0b34bf4c71dc0ffe86ed5111b04}{Pyramid\+Asset} (glm\+::vec3 Spawn, glm\+::vec3 xyz\+Pos, glm\+::vec3 xyz\+Translation, bool xyz\+Tbool)
+\item 
+\hyperlink{class_pyramid_asset_afb388a196f43a3808b2d4f6fdb89ee84}{$\sim$\+Pyramid\+Asset} ()
+\item 
+virtual void \hyperlink{class_pyramid_asset_aaea45da4956d79ec9ab96e9d0ccef3fe}{Draw} (G\+Luint)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_pyramid_asset_a5588f0b34bf4c71dc0ffe86ed5111b04}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!Pyramid\+Asset@{Pyramid\+Asset}}
+\index{Pyramid\+Asset@{Pyramid\+Asset}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{Pyramid\+Asset(glm\+::vec3 Spawn, glm\+::vec3 xyz\+Pos, glm\+::vec3 xyz\+Translation, bool xyz\+Tbool)}]{\setlength{\rightskip}{0pt plus 5cm}Pyramid\+Asset\+::\+Pyramid\+Asset (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3}]{Spawn, }
+\item[{glm\+::vec3}]{xyz\+Pos, }
+\item[{glm\+::vec3}]{xyz\+Translation, }
+\item[{bool}]{xyz\+Tbool}
+\end{DoxyParamCaption}
+)}\label{class_pyramid_asset_a5588f0b34bf4c71dc0ffe86ed5111b04}
+Pyramid Creation models coordinates, origin dependant on xyz variables. vertex buffer models coordinates, for the triangles. colour buffer models the colour of the object triangles. element buffer creates the cube using 6 triangles.\hypertarget{class_pyramid_asset_afb388a196f43a3808b2d4f6fdb89ee84}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!````~Pyramid\+Asset@{$\sim$\+Pyramid\+Asset}}
+\index{````~Pyramid\+Asset@{$\sim$\+Pyramid\+Asset}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{$\sim$\+Pyramid\+Asset()}]{\setlength{\rightskip}{0pt plus 5cm}Pyramid\+Asset\+::$\sim$\+Pyramid\+Asset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_pyramid_asset_afb388a196f43a3808b2d4f6fdb89ee84}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_pyramid_asset_aaea45da4956d79ec9ab96e9d0ccef3fe}{}\index{Pyramid\+Asset@{Pyramid\+Asset}!Draw@{Draw}}
+\index{Draw@{Draw}!Pyramid\+Asset@{Pyramid\+Asset}}
+\subsubsection[{Draw(\+G\+Luint)}]{\setlength{\rightskip}{0pt plus 5cm}void Pyramid\+Asset\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{program\+\_\+token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_pyramid_asset_aaea45da4956d79ec9ab96e9d0ccef3fe}
+use the previously transferred buffer as the vertex array. This way we transfer the buffer once -- at construction -- not on every frame.
+
+repeated buffer array for color buffer
+
+Implements \hyperlink{class_game_asset_a961aa51ca0a9961fc584c0b5d5431300}{Game\+Asset}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_pyramid_asset_8h}{Pyramid\+Asset.\+h}\item 
+src/\hyperlink{_pyramid_asset_8cc}{Pyramid\+Asset.\+cc}\end{DoxyCompactItemize}

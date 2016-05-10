@@ -1,9 +1,12 @@
 <map id="src/main.cc" name="src/main.cc">
-<area shape="rect" id="node8" href="$common_8h.html" title="common.h" alt="" coords="1250,229,1333,256"/>
-<area shape="rect" id="node9" href="$GameWorld_8h.html" title="GameWorld.h" alt="" coords="832,80,935,107"/>
-<area shape="rect" id="node10" href="$GameAssetManager_8h.html" title="GameAssetManager.h" alt="" coords="807,155,959,181"/>
-<area shape="rect" id="node16" href="$CubeAsset_8h.html" title="CubeAsset.h" alt="" coords="467,155,566,181"/>
-<area shape="rect" id="node19" href="$FloorAsset_8h.html" title="FloorAsset.h" alt="" coords="590,155,686,181"/>
-<area shape="rect" id="node20" href="$PyramidAsset_8h.html" title="PyramidAsset.h" alt="" coords="329,155,443,181"/>
-<area shape="rect" id="node15" href="$GameAsset_8h.html" title="GameAsset.h" alt="" coords="579,229,681,256"/>
+<area shape="rect" id="node2" href="$_game_8h.html" title="Game.h" alt="" coords="1437,80,1505,107"/>
+<area shape="rect" id="node9" href="$common_8h.html" title="common.h" alt="" coords="1306,379,1389,405"/>
+<area shape="rect" id="node10" href="$_game_world_8h.html" title="GameWorld.h" alt="" coords="605,155,708,181"/>
+<area shape="rect" id="node11" href="$_game_asset_manager_8h.html" title="GameAssetManager.h" alt="" coords="850,229,1002,256"/>
+<area shape="rect" id="node17" href="$_game_asset_8h.html" title="GameAsset.h" alt="" coords="600,304,703,331"/>
+<area shape="rect" id="node22" href="$_cube_asset_8h.html" title="CubeAsset.h" alt="" coords="373,229,471,256"/>
+<area shape="rect" id="node23" href="$_floor_asset_8h.html" title="FloorAsset.h" alt="" coords="237,229,333,256"/>
+<area shape="rect" id="node24" href="$_pyramid_asset_8h.html" title="PyramidAsset.h" alt="" coords="505,229,619,256"/>
+<area shape="rect" id="node21" href="$_camera_8h.html" title="Camera.h" alt="" coords="1101,304,1180,331"/>
+<area shape="rect" id="node18" href="$_bounding_box_8h.html" title="BoundingBox.h" alt="" coords="643,379,753,405"/>
 </map>

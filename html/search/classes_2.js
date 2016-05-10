@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['gameasset',['GameAsset',['../classGameAsset.html',1,'']]],
-  ['gameassetmanager',['GameAssetManager',['../classGameAssetManager.html',1,'']]],
-  ['gameworld',['GameWorld',['../classGameWorld.html',1,'']]]
+  ['floorasset',['FloorAsset',['../class_floor_asset.html',1,'']]]
 ];

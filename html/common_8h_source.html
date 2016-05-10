@@ -22,10 +22,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ScreenCap7.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Glex
+   &#160;<span id="projectnumber">2</span>
    </div>
-   <div id="projectbrief">A basic 3D game using multiple voxels</div>
+   <div id="projectbrief">Games Development Coursework</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,13 +95,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="common_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef COMMON_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define COMMON_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="common_8h.html#add86e7c88dd109abea3f708b422f31f0a25f73324dc93d9024c0c75b4e6815335">   12</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="common_8h.html#add86e7c88dd109abea3f708b422f31f0">ApplicationMode</a> {<a class="code" href="common_8h.html#add86e7c88dd109abea3f708b422f31f0a25f73324dc93d9024c0c75b4e6815335">TRANSFORM</a>, <a class="code" href="common_8h.html#add86e7c88dd109abea3f708b422f31f0a3dcfe0046eb5876e287dbf0914819b16">ROTATE</a>, <a class="code" href="common_8h.html#add86e7c88dd109abea3f708b422f31f0a593be05a10070b4e7e0856e20590eaaf">SCALE</a>};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="common_8h_html_add86e7c88dd109abea3f708b422f31f0a593be05a10070b4e7e0856e20590eaaf"><div class="ttname"><a href="common_8h.html#add86e7c88dd109abea3f708b422f31f0a593be05a10070b4e7e0856e20590eaaf">SCALE</a></div><div class="ttdef"><b>Definition:</b> common.h:12</div></div>
-<div class="ttc" id="common_8h_html_add86e7c88dd109abea3f708b422f31f0"><div class="ttname"><a href="common_8h.html#add86e7c88dd109abea3f708b422f31f0">ApplicationMode</a></div><div class="ttdeci">ApplicationMode</div><div class="ttdoc">ApplicationMode denotes the global state of the application. </div><div class="ttdef"><b>Definition:</b> common.h:12</div></div>
-<div class="ttc" id="common_8h_html_add86e7c88dd109abea3f708b422f31f0a25f73324dc93d9024c0c75b4e6815335"><div class="ttname"><a href="common_8h.html#add86e7c88dd109abea3f708b422f31f0a25f73324dc93d9024c0c75b4e6815335">TRANSFORM</a></div><div class="ttdef"><b>Definition:</b> common.h:12</div></div>
-<div class="ttc" id="common_8h_html_add86e7c88dd109abea3f708b422f31f0a3dcfe0046eb5876e287dbf0914819b16"><div class="ttname"><a href="common_8h.html#add86e7c88dd109abea3f708b422f31f0a3dcfe0046eb5876e287dbf0914819b16">ROTATE</a></div><div class="ttdef"><b>Definition:</b> common.h:12</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="common_8h.html#a080a822f0093973313bd644e517a5090aec8379af7490bb9eaaf579cf17876f38">    4</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="common_8h.html#a080a822f0093973313bd644e517a5090">Input</a>{ <a class="code" href="common_8h.html#a080a822f0093973313bd644e517a5090ad2625e4f5268d590b842108adccf8ab6">NILL</a> , <a class="code" href="common_8h.html#a080a822f0093973313bd644e517a5090aa26736999186daf8146f809e863712a1">FORWARD</a>, <a class="code" href="common_8h.html#a080a822f0093973313bd644e517a5090a9b0b4a95b99523966e0e34ffdadac9da">DOWN</a>, <a class="code" href="common_8h.html#a080a822f0093973313bd644e517a5090adb45120aafd37a973140edee24708065">LEFT</a>, <a class="code" href="common_8h.html#a080a822f0093973313bd644e517a5090aec8379af7490bb9eaaf579cf17876f38">RIGHT</a>, <a class="code" href="common_8h.html#a080a822f0093973313bd644e517a5090ac76a3468b312fb637019e15382391d12">ASCEND</a>, <a class="code" href="common_8h.html#a080a822f0093973313bd644e517a5090a1659e35266baee5acbbaba52ebc7d6c9">DESCEND</a>};</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="common_8h_html_a080a822f0093973313bd644e517a5090ad2625e4f5268d590b842108adccf8ab6"><div class="ttname"><a href="common_8h.html#a080a822f0093973313bd644e517a5090ad2625e4f5268d590b842108adccf8ab6">NILL</a></div><div class="ttdef"><b>Definition:</b> common.h:4</div></div>
+<div class="ttc" id="common_8h_html_a080a822f0093973313bd644e517a5090"><div class="ttname"><a href="common_8h.html#a080a822f0093973313bd644e517a5090">Input</a></div><div class="ttdeci">Input</div><div class="ttdef"><b>Definition:</b> common.h:4</div></div>
+<div class="ttc" id="common_8h_html_a080a822f0093973313bd644e517a5090ac76a3468b312fb637019e15382391d12"><div class="ttname"><a href="common_8h.html#a080a822f0093973313bd644e517a5090ac76a3468b312fb637019e15382391d12">ASCEND</a></div><div class="ttdef"><b>Definition:</b> common.h:4</div></div>
+<div class="ttc" id="common_8h_html_a080a822f0093973313bd644e517a5090a1659e35266baee5acbbaba52ebc7d6c9"><div class="ttname"><a href="common_8h.html#a080a822f0093973313bd644e517a5090a1659e35266baee5acbbaba52ebc7d6c9">DESCEND</a></div><div class="ttdef"><b>Definition:</b> common.h:4</div></div>
+<div class="ttc" id="common_8h_html_a080a822f0093973313bd644e517a5090aec8379af7490bb9eaaf579cf17876f38"><div class="ttname"><a href="common_8h.html#a080a822f0093973313bd644e517a5090aec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div><div class="ttdef"><b>Definition:</b> common.h:4</div></div>
+<div class="ttc" id="common_8h_html_a080a822f0093973313bd644e517a5090adb45120aafd37a973140edee24708065"><div class="ttname"><a href="common_8h.html#a080a822f0093973313bd644e517a5090adb45120aafd37a973140edee24708065">LEFT</a></div><div class="ttdef"><b>Definition:</b> common.h:4</div></div>
+<div class="ttc" id="common_8h_html_a080a822f0093973313bd644e517a5090aa26736999186daf8146f809e863712a1"><div class="ttname"><a href="common_8h.html#a080a822f0093973313bd644e517a5090aa26736999186daf8146f809e863712a1">FORWARD</a></div><div class="ttdef"><b>Definition:</b> common.h:4</div></div>
+<div class="ttc" id="common_8h_html_a080a822f0093973313bd644e517a5090a9b0b4a95b99523966e0e34ffdadac9da"><div class="ttname"><a href="common_8h.html#a080a822f0093973313bd644e517a5090a9b0b4a95b99523966e0e34ffdadac9da">DOWN</a></div><div class="ttdef"><b>Definition:</b> common.h:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

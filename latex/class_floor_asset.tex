@@ -1,0 +1,77 @@
+\hypertarget{class_floor_asset}{}\section{Floor\+Asset Class Reference}
+\label{class_floor_asset}\index{Floor\+Asset@{Floor\+Asset}}
+
+
+{\ttfamily \#include $<$Floor\+Asset.\+h$>$}
+
+
+
+Inheritance diagram for Floor\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_floor_asset__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Floor\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_floor_asset__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_floor_asset_a4b8e3fb6415ed1126c9243267c7195a8}{Floor\+Asset} (glm\+::vec3 Spawn, glm\+::vec3 xyz\+Pos, glm\+::vec3 xyz\+Translation, bool xyz\+Tbool)
+\item 
+\hyperlink{class_floor_asset_a7d782882bb08ee2a2285821275383856}{$\sim$\+Floor\+Asset} ()
+\item 
+virtual void \hyperlink{class_floor_asset_a14650eb2c2cd75e990c351bad8636279}{Draw} (G\+Luint)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_floor_asset_a4b8e3fb6415ed1126c9243267c7195a8}{}\index{Floor\+Asset@{Floor\+Asset}!Floor\+Asset@{Floor\+Asset}}
+\index{Floor\+Asset@{Floor\+Asset}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{Floor\+Asset(glm\+::vec3 Spawn, glm\+::vec3 xyz\+Pos, glm\+::vec3 xyz\+Translation, bool xyz\+Tbool)}]{\setlength{\rightskip}{0pt plus 5cm}Floor\+Asset\+::\+Floor\+Asset (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3}]{Spawn, }
+\item[{glm\+::vec3}]{xyz\+Pos, }
+\item[{glm\+::vec3}]{xyz\+Translation, }
+\item[{bool}]{xyz\+Tbool}
+\end{DoxyParamCaption}
+)}\label{class_floor_asset_a4b8e3fb6415ed1126c9243267c7195a8}
+Cube Creation This uses the same definitions as \hyperlink{class_cube_asset}{Cube\+Asset} with different coordinates. models coordinates, origin dependant on xyz variables. vertex buffer models coordinates, for the triangles. colour buffer models the colour of the object triangles. element buffer creates the cube using 12 triangles.
+
+Buffer Implementation Transfer buffers to the G\+P\+U\hypertarget{class_floor_asset_a7d782882bb08ee2a2285821275383856}{}\index{Floor\+Asset@{Floor\+Asset}!````~Floor\+Asset@{$\sim$\+Floor\+Asset}}
+\index{````~Floor\+Asset@{$\sim$\+Floor\+Asset}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{$\sim$\+Floor\+Asset()}]{\setlength{\rightskip}{0pt plus 5cm}Floor\+Asset\+::$\sim$\+Floor\+Asset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_floor_asset_a7d782882bb08ee2a2285821275383856}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_floor_asset_a14650eb2c2cd75e990c351bad8636279}{}\index{Floor\+Asset@{Floor\+Asset}!Draw@{Draw}}
+\index{Draw@{Draw}!Floor\+Asset@{Floor\+Asset}}
+\subsubsection[{Draw(\+G\+Luint)}]{\setlength{\rightskip}{0pt plus 5cm}void Floor\+Asset\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{program\+\_\+token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_floor_asset_a14650eb2c2cd75e990c351bad8636279}
+Buffer Arrays use the previously transferred buffer as the vertex array. This way we transfer the buffer once -- at construction -- not on every frame.
+
+Implements \hyperlink{class_game_asset_a961aa51ca0a9961fc584c0b5d5431300}{Game\+Asset}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_floor_asset_8h}{Floor\+Asset.\+h}\item 
+src/\hyperlink{_floor_asset_8cc}{Floor\+Asset.\+cc}\end{DoxyCompactItemize}

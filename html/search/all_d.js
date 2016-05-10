@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scale',['SCALE',['../common_8h.html#add86e7c88dd109abea3f708b422f31f0a593be05a10070b4e7e0856e20590eaaf',1,'common.h']]],
-  ['sdlwindowdeleter',['SDLWindowDeleter',['../structSDLWindowDeleter.html',1,'']]],
-  ['stdc_5fheaders',['STDC_HEADERS',['../config_8h.html#a550e5c272cc3cf3814651721167dcd23',1,'config.h']]]
+  ['right',['RIGHT',['../common_8h.html#a080a822f0093973313bd644e517a5090aec8379af7490bb9eaaf579cf17876f38',1,'common.h']]],
+  ['run_5fgraphics_5fdisplay',['RUN_GRAPHICS_DISPLAY',['../_game_8cc.html#a6ff0ea1b288e03115f981ba31f96fade',1,'Game.cc']]]
 ];

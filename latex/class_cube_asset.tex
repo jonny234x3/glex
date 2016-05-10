@@ -1,0 +1,77 @@
+\hypertarget{class_cube_asset}{}\section{Cube\+Asset Class Reference}
+\label{class_cube_asset}\index{Cube\+Asset@{Cube\+Asset}}
+
+
+{\ttfamily \#include $<$Cube\+Asset.\+h$>$}
+
+
+
+Inheritance diagram for Cube\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_cube_asset__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cube\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_cube_asset__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cube_asset_a0e4fb8ef862794c7c86e8dbfc5f39b59}{Cube\+Asset} (glm\+::vec3 Spawn, glm\+::vec3 xyz\+Pos, glm\+::vec3 xyz\+Translation, bool xyz\+Tbool)
+\item 
+\hyperlink{class_cube_asset_ab3ab9a5da82cbf8537a28652410093b1}{$\sim$\+Cube\+Asset} ()
+\item 
+virtual void \hyperlink{class_cube_asset_a1af568486056e254ffcf98fd99947bfe}{Draw} (G\+Luint)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_cube_asset_a0e4fb8ef862794c7c86e8dbfc5f39b59}{}\index{Cube\+Asset@{Cube\+Asset}!Cube\+Asset@{Cube\+Asset}}
+\index{Cube\+Asset@{Cube\+Asset}!Cube\+Asset@{Cube\+Asset}}
+\subsubsection[{Cube\+Asset(glm\+::vec3 Spawn, glm\+::vec3 xyz\+Pos, glm\+::vec3 xyz\+Translation, bool xyz\+Tbool)}]{\setlength{\rightskip}{0pt plus 5cm}Cube\+Asset\+::\+Cube\+Asset (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3}]{Spawn, }
+\item[{glm\+::vec3}]{xyz\+Pos, }
+\item[{glm\+::vec3}]{xyz\+Translation, }
+\item[{bool}]{xyz\+Tbool}
+\end{DoxyParamCaption}
+)}\label{class_cube_asset_a0e4fb8ef862794c7c86e8dbfc5f39b59}
+Cube Creation models coordinates, origin dependant on xyz variables. vertex buffer models coordinates, for the triangles. colour buffer models the colour of the object triangles. element buffer creates the cube using 12 triangles.
+
+Buffer Implementation Transfer buffers to the G\+P\+U\hypertarget{class_cube_asset_ab3ab9a5da82cbf8537a28652410093b1}{}\index{Cube\+Asset@{Cube\+Asset}!````~Cube\+Asset@{$\sim$\+Cube\+Asset}}
+\index{````~Cube\+Asset@{$\sim$\+Cube\+Asset}!Cube\+Asset@{Cube\+Asset}}
+\subsubsection[{$\sim$\+Cube\+Asset()}]{\setlength{\rightskip}{0pt plus 5cm}Cube\+Asset\+::$\sim$\+Cube\+Asset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_cube_asset_ab3ab9a5da82cbf8537a28652410093b1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_cube_asset_a1af568486056e254ffcf98fd99947bfe}{}\index{Cube\+Asset@{Cube\+Asset}!Draw@{Draw}}
+\index{Draw@{Draw}!Cube\+Asset@{Cube\+Asset}}
+\subsubsection[{Draw(\+G\+Luint)}]{\setlength{\rightskip}{0pt plus 5cm}void Cube\+Asset\+::\+Draw (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{program\+\_\+token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_cube_asset_a1af568486056e254ffcf98fd99947bfe}
+Buffer Arrays use the previously transferred buffer as the vertex array. This way we transfer the buffer once -- at construction -- not on every frame.
+
+Implements \hyperlink{class_game_asset_a961aa51ca0a9961fc584c0b5d5431300}{Game\+Asset}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_cube_asset_8h}{Cube\+Asset.\+h}\item 
+src/\hyperlink{_cube_asset_8cc}{Cube\+Asset.\+cc}\end{DoxyCompactItemize}
