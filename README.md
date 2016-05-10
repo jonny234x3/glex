@@ -1,6 +1,6 @@
 # Build Status #
 
-[![Build Status](https://travis-ci.org/jonny234x3/glex.png)](https://travis-ci.org/jonny234x3/glex/branches)
+[![Build Status](https://travis-ci.org/jonny234x3/glex.svg?branch=master)](https://travis-ci.org/jonny234x3/glex/branches)
 
 # Prerequisites #
 
