@@ -33,6 +33,5 @@ class GameWorld {
  private:
   glm::vec3 Spawn = glm::vec3(0.0f,0.0f,0.0f);
   std::shared_ptr<GameAssetManager> asset_manager;
-  int plane;
 };
 #endif // GAMEWORLD_H
