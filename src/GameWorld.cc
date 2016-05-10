@@ -15,7 +15,7 @@ int X,Y;
 int Z = 1;
 int planeX = 12;
 int planeY = 12;
-int plane[planeX][planeY] = {
+int plane[12][12] = {
 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
