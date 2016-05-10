@@ -1,4 +1,7 @@
 import liblink
 print liblink.hello()
 
-print("Good Bye")
+Start = liblink.Game()
+Start.Start();
+
+print("End")
